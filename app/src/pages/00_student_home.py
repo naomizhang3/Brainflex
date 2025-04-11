@@ -22,7 +22,7 @@ if st.button('Find tutors',
 if st.button('View all bookings', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/02_Map_Demo.py')
+  st.switch_page('pages/02_view_bookings.py')
 
 if st.button('Book a session', 
              type='primary',

@@ -10,7 +10,8 @@ from backend.db_connection import db
 student_routes = Blueprint("student_routes", __name__)
 
 
-#------------------------------------------------------------
+#-----1.1---------As a student, I need to be able to filter-search for tutors so that I can see tutors (and their bios) for the classes I’m enrolled in.
+
 
 @student_routes.route('/tutors/<course_id>/<course_num>', methods=['GET'])
 def get_bookings(course_id, course_num):
@@ -31,7 +32,7 @@ def get_bookings(course_id, course_num):
     response.status_code = 200
     return response
 
-#------------------------------------------------------------
+# ---------1.2---------------------------------------------------
 # @student_routes.route('/bookings/<userID>', methods=['GET'])
 # def get_bookings(student_id):
 #     current_app.logger.info('GET /customers/<userID> route')
@@ -47,7 +48,7 @@ def get_bookings(course_id, course_num):
 #     the_response.status_code = 200
 #     return the_response
 
-#------------------------------------------------------------
+# ------------------------------------------------------------
 
 
 
