@@ -4,13 +4,13 @@ from backend.db_connection import db
 from backend.simple.playlist import sample_playlist_data
 
 # This blueprint handles some basic routes that you can use for testing
-admin_routes = Blueprint('admin_routes', __name__)
+tutors_routes = Blueprint('tutors_routes', __name__)
 
 # ------------------------------------------------------------
-@admin_routes.route('/')
+@tutors_routes.route('/')
 def welcome():
     current_app.logger.info('GET / handler')
-    welcome_message = '<h1>ADMINS'
+    welcome_message = '<h1>TUTORS'
     response = make_response(welcome_message)
     response.status_code = 200
     return response
