@@ -22,19 +22,14 @@ if st.button("Check all system logs",
 if st.button("View backup schedule", 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/12_API_Test.py')
+  st.switch_page('pages/13_backup_schedule.py')
 
 if st.button("Review requests from academic advisors", 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/12_API_Test.py')
+  st.switch_page('pages/14_requests_review.py')
 
-if st.button("Add students to the system",
+if st.button("Modify student data",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/13_Classification.py')
-
-if st.button("Remove students from the system",
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/13_Classification.py')
+  st.switch_page('pages/15_edit_student_data.py')

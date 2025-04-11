@@ -8,7 +8,9 @@ import requests
 SideBarLinks()
 
 # set the header of the page
-st.header("Backup Schedule")
+st.header("Student Data")
 
-backup_data = requests.get("http://api:4000/admin/backupschedule").json()
-st.dataframe(backup_data)
+student_data = requests.get("http://api:4000/admin/studentdata").json()
+st.dataframe(student_data)
+
+st.text_input("Student name:")
