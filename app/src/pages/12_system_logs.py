@@ -15,3 +15,6 @@ SideBarLinks()
 
 # set the header of the page
 st.header("System Logs")
+
+logs = requests.get("http://api:4000/admin/systemlogs")
+st.code(logs)

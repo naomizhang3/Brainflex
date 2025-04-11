@@ -7,10 +7,15 @@ from backend.simple.playlist import sample_playlist_data
 admin_routes = Blueprint('admin_routes', __name__)
 
 # ------------------------------------------------------------
-@admin_routes.route('/')
-def welcome():
-    current_app.logger.info('GET / handler')
-    welcome_message = '<h1>ADMINS'
-    response = make_response(welcome_message)
+@admin_routes.route("/systemlogs", methods=['GET'])
+def get_customers():
+
+    current_app.logger.info('GET /systemlogs route')
+    cursor = db.get_db().cursor()
+    query = "SELECT * FROM SystemLogs"
+    cursor.execute(query)
+    data = cursor.fetchall()
+
+    response = make_response(jsonify(data))
     response.status_code = 200
     return response
