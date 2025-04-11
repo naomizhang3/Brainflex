@@ -9,7 +9,6 @@ from backend.admins.admin_routes import admin_routes
 from backend.advisers.advisers_routes import advisers_routes
 from backend.tutors.tutors_routes import tutors_routes
 
-
 import os
 from dotenv import load_dotenv
 
