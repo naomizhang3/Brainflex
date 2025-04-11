@@ -78,7 +78,7 @@ if st.button('Act as Mr. Xander, an academic adviser',
             use_container_width=True):
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'administrator'
-    st.session_state['first_name'] = 'Allie'
-    st.switch_page('pages/20_Admin_Home.py')
+    st.session_state['first_name'] = 'Mr. Xander'
+    st.switch_page('pages/31_advisor_home.py')
 
 
