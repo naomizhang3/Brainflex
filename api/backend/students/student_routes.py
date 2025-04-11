@@ -17,7 +17,7 @@ def get_bookings(course_id, course_num):
     # response.status_code = 200
 
     
-    return 'HIII'
+    # return 'HIII'
     current_app.logger.info('GET /tutors/<course_id>/<course_num> route')
     cursor = db.get_db().cursor()
     query = """SELECT t.first_name, t.last_name, t.bio
