@@ -14,7 +14,7 @@ import requests
 SideBarLinks()
 
 # set the header of the page
-st.header('Getting tutors for courses')
+st.header('Getting tutors for classes')
 
 # You can access the session state to make a more customized/personalized app experience
 st.write(f"### Hi, {st.session_state['first_name']}.")
