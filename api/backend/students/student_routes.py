@@ -4,11 +4,32 @@ from flask import jsonify
 from flask import make_response
 from flask import current_app
 from backend.db_connection import db
-from backend.ml_models.model01 import predict
 
 #------------------------------------------------------------
 # Create a new Blueprint object for students
 students = Blueprint("students", __name__)
+
+
+#------------------------------------------------------------
+
+@students.route('/tutors/<course_id>/<course_num>', methods=['GET'])
+def get_bookings(course_id, course_num):
+    # response.status_code = 200
+
+    
+    return 'HIII'
+    current_app.logger.info('GET /tutors/<course_id>/<course_num> route')
+    cursor = db.get_db().cursor()
+    query = """SELECT t.first_name, t.last_name, t.bio
+               FROM Tutors t
+               JOIN RegisteredCourses rc ON t.user_id = rc.user_id
+               WHERE course_id = %s AND course_num = %s;"""
+    cursor.execute(query, (course_id, course_num))
+    data = cursor.fetchall()
+
+    response = make_response(jsonify(data))
+    response.status_code = 200
+    return response
 
 #------------------------------------------------------------
 @students.route('/bookings/<userID>', methods=['GET'])

@@ -17,7 +17,7 @@ st.write('### What would you like to do today?')
 if st.button('Find tutors', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/01_World_Bank_Viz.py')
+  st.switch_page('pages/01_get_tutor.py')
 
 if st.button('View all bookings', 
              type='primary',
