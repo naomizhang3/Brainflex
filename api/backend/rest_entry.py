@@ -6,7 +6,7 @@ from backend.products.products_routes import products
 from backend.simple.simple_routes import simple_routes
 from backend.students.student_routes import student_routes
 from backend.admins.admin_routes import admin_routes
-from backend.advisors.advisors_routes import advisor_routes
+from backend.advisors.advisor_routes import advisor_routes
 from backend.tutors.tutors_routes import tutors_routes
 
 import os
