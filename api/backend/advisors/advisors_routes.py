@@ -14,3 +14,16 @@ def welcome():
     response = make_response(welcome_message)
     response.status_code = 200
     return response
+
+# ------------------------------------------------------------
+@admin_routes.route("/payments", methods=["GET"])
+def get_payments():
+    current_app.logger.info('GET /payments route')
+    cursor = db.get_db().cursor()
+    query = """SELECT * FROM Transactions"""
+    cursor.execute(query)
+    data = cursor.fetchall()
+
+    response = make_response(jsonify(data))
+    response.status_code = 200
+    return response
