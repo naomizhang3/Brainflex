@@ -12,13 +12,13 @@ CREATE TABLE Students (
     first_name   VARCHAR(50),
     MI           CHAR(1),
     last_name    VARCHAR(50),
-    year         INT,
+    ug_year         INT,
     major        VARCHAR(50),
     phone        VARCHAR(25),
     pers_email   VARCHAR(50),
     nu_email     VARCHAR(50),
     accomm_descr VARCHAR(50),
-    status       VARCHAR(25),
+    acct_status       VARCHAR(25),
     active_min   INT
 );
 
@@ -29,13 +29,13 @@ CREATE TABLE Tutors (
     first_name   VARCHAR(50),
     MI           CHAR(1),
     last_name    VARCHAR(50),
-    year         INT,
+    ug_year         INT,
     major        VARCHAR(50),
     bio          TEXT,
     phone        VARCHAR(25),
     pers_email   VARCHAR(50),
     nu_email     VARCHAR(50),
-    status       VARCHAR(25),
+    acct_status       VARCHAR(25),
     calendar_url VARCHAR(50),
     active_min   INT
 );
@@ -50,7 +50,7 @@ CREATE TABLE AcademicAdvisors (
     pers_email  VARCHAR(50),
     nu_email    VARCHAR(50),
     seniority   VARCHAR(25),
-    status      VARCHAR(25),
+    acct_status      VARCHAR(25),
     active_min  INT
 );
 
@@ -62,7 +62,7 @@ CREATE TABLE Admins (
     last_name    VARCHAR(50),
     phone        VARCHAR(25),
     email        VARCHAR(75),
-    status       VARCHAR(50),
+    acct_status       VARCHAR(50),
     active_min   INT,
     access_level DECIMAL(1, 0)
 );
@@ -73,8 +73,8 @@ CREATE TABLE Uploads (
     upload_id INT PRIMARY KEY,
     user_id   INT NOT NULL,
     file_name CHAR(50),
-    type      VARCHAR(50),
-    timestamp datetime,
+    upload_type      VARCHAR(50),
+    upload_date datetime,
     CONSTRAINT uploads_user_fk FOREIGN KEY (user_id) REFERENCES Students (user_id)
 );
 
@@ -84,9 +84,9 @@ CREATE TABLE Feedback (
     user_id int,
     reviewed_by INT NOT NULL,
     anonymity   BOOLEAN,
-    text        TEXT,
-    timestamp   DATETIME,
-    status      VARCHAR(50),
+    feedback_text        TEXT,
+    submit_date   DATETIME,
+    review_status      VARCHAR(50),
     CONSTRAINT feedback_fk FOREIGN KEY (reviewed_by) REFERENCES AcademicAdvisors (advisors_id),
     CONSTRAINT student_feedback_fk FOREIGN KEY (user_id) REFERENCES Students (user_id)
 
@@ -96,7 +96,7 @@ CREATE TABLE Feedback (
 DROP TABLE IF EXISTS FlagTypes;
 CREATE TABLE FlagTypes (
     type_id INT PRIMARY KEY,
-    name    VARCHAR(50)
+    flag_name    VARCHAR(50)
 );
 
 
@@ -139,15 +139,15 @@ CREATE TABLE RegisteredCourses (
 DROP TABLE IF EXISTS RequestTypes;
 CREATE TABLE RequestTypes (
     type_id INT PRIMARY KEY,
-    name    VARCHAR(50)
+    request_name    VARCHAR(50)
 );
 
 DROP TABLE IF EXISTS Requests;
 CREATE TABLE Requests (
     request_id     INT PRIMARY KEY,
     type_id        INT,
-    description    TEXT,
-    status        VARCHAR(50),
+    descr    TEXT,
+    review_status        VARCHAR(50),
     sent_by       INT,
     reviewed_by   INT,
     CONSTRAINT request_type_fk FOREIGN KEY (type_id) REFERENCES RequestTypes (type_id),
@@ -158,7 +158,7 @@ CREATE TABLE Requests (
 DROP TABLE IF EXISTS Bookings;
 CREATE TABLE Bookings (
     booking_id     INT PRIMARY KEY,
-    status         BOOLEAN,
+    completion_status         BOOLEAN,
     creation_time  DATETIME,
     scheduled_time  DATETIME
 );
@@ -182,7 +182,7 @@ CREATE TABLE BookingParticipants (
 DROP TABLE IF EXISTS PaymentMethods;
 CREATE TABLE PaymentMethods (
     method_id INT PRIMARY KEY,
-    name      VARCHAR(50)
+    method_name      VARCHAR(50)
 );
 
 DROP TABLE IF EXISTS Transactions;
@@ -192,7 +192,7 @@ CREATE TABLE Transactions (
     reviewed_by    INT,
     booking_id     INT,
     method_id      INT,
-    status         VARCHAR(25),
+    transaction_status         VARCHAR(25),
     payment_date   DATETIME,
     amount         DECIMAL(10, 2),
     earned_date    DATETIME,
@@ -209,8 +209,8 @@ CREATE TABLE Transactions (
 DROP TABLE IF EXISTS Backups;
 CREATE TABLE Backups (
     backup_id VARCHAR(50) PRIMARY KEY,
-    status    BOOLEAN,
-    timestamp DATETIME,
+    backup_status    BOOLEAN,
+    backup_date DATETIME,
     admin_id  INT NOT NULL,
     CONSTRAINT backup_admin_fk FOREIGN KEY (admin_id) REFERENCES Admins (admin_id)
 );
@@ -218,7 +218,7 @@ CREATE TABLE Backups (
 DROP TABLE IF EXISTS LogTypes;
 CREATE TABLE LogTypes (
     type_id INT PRIMARY KEY,
-    name    VARCHAR(50),
+    type_name    VARCHAR(50),
     details TEXT
 );
 
@@ -226,7 +226,7 @@ DROP TABLE IF EXISTS SystemLogs;
 CREATE TABLE SystemLogs (
     log_id         INT PRIMARY KEY,
     type_id        INT,
-    status         BOOLEAN,
+    log_status         BOOLEAN,
     creation_date  DATETIME,
     resolved_date  DATETIME,
     reviewed_by    INT,
