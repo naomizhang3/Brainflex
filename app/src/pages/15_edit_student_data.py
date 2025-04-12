@@ -17,24 +17,48 @@ with st.expander("View All Student Data"):
 # add spacing for visual clarity
 st.text("")
 
-st.write("Add New Student")
-with st.form("student_form"):
-    system_id = st.text_input('System ID:')
-    nu_id = st.text_input('NUID:')
-    first_name = st.text_input('First Name:')
-    last_name = st.text_input('Last Name:')
-    
-    submitted = st.form_submit_button("Submit")
+col1, col2 = st.columns(2)
 
-    if submitted:
-        data = {
-            "user_id": system_id,
-            "nu_id": nu_id,
-            "fn": first_name,
-            "ln": last_name
-        }
+with col1:
+    st.write("Add New Student to System")
+    with st.form("add_student_form"):
+        user_id = st.text_input('User ID:')
+        nu_id = st.text_input('NUID:')
+        first_name = st.text_input('First Name:')
+        last_name = st.text_input('Last Name:')
+        
+        submitted = st.form_submit_button("Submit")
 
-        requests.post("http://api:4000/admin/studentdata", json=data)
+        if submitted:
+            data = {
+                "user_id": user_id,
+                "nu_id": nu_id,
+                "fn": first_name,
+                "ln": last_name
+            }
 
-# if st.button('Calculate Prediction', type='primary', use_container_width=True):
-#   st.write("Hi")
+            response = requests.post("http://api:4000/admin/studentdata", json=data)
+            if response.status_code == 200:
+                st.success("Student successfully added.")
+            else:
+                st.error(f"Failed to add student.")
+
+with col2:
+    st.write("Remove Student from System")
+    with st.form("remove_student_form"):
+        user_id = st.text_input('User ID:')
+        confirm = st.checkbox("I understand that this action cannot be undone.")
+        submitted = st.form_submit_button("Submit")
+
+        if submitted:
+            if not confirm:
+                st.error("You must check the box to proceed.")
+            else:
+                data = {"user_id": user_id}
+
+                response = requests.delete("http://api:4000/admin/studentdata", 
+                                            json=data)
+                if response.status_code == 200:
+                    st.success("Student data successfully deleted.")
+                else:
+                    st.error(f"Failed to delete student data.")
