@@ -53,8 +53,44 @@ def get_student_bookings(userID):
     the_response.status_code = 200
     return the_response
 
+#1.2---------------------------------------------------------
+@student_routes.route("/createbookings", methods=["POST"])
+def post_bookings_data():
+    data = request.json
+    current_app.logger.info('POST /createbookings route')
+    cursor = db.get_db().cursor()
 
+    booking_id = data["booking_id"]
+    completion_status = data["completion_status"]
+    creation_time = data["creation_time"]
+    scheduled_time = data["scheduled_time"]
 
+    tutor_id = data["tutor_id"]
+    student_id = data["student_id"]
+    rating = data["rating"]
+
+    query_bookings = """INSERT INTO Bookings (booking_id, completion_status, creation_time, scheduled_time)
+    VALUES (%s, %s, %s, %s);"""
+
+    query_bparticipants = """INSERT INTO BookingParticipants (tutor_id, student_id, booking_id, rating)
+    VALUES (%s, %s, %s, %s);"""
+
+    current_app.logger.info(query_bookings)
+    current_app.logger.info(query_bparticipants)
+
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query_bookings, (booking_id, completion_status, creation_time, scheduled_time))
+        cursor.execute(query_bparticipants, (tutor_id, student_id, booking_id, rating))
+        db.get_db().commit()
+
+        response = make_response("Successfully scheduled a booking")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to schedule a booking")
+        response.status_code = 400
+        return response
 # Get all customers from the system
 # @customers.route("/bookings/", methods=['GET'])
 # def get_customers():

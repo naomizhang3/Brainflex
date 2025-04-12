@@ -27,7 +27,7 @@ if st.button('View all bookings',
 if st.button('Book a session', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/02_Map_Demo.py')
+  st.switch_page('pages/03_create_bookings.py')
 
 if st.button('Reschedule bookings', 
              type='primary',
