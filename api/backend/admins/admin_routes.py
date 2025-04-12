@@ -6,6 +6,7 @@ from backend.simple.playlist import sample_playlist_data
 admin_routes = Blueprint('admin_routes', __name__)
 
 # ------------------------------------------------------------
+# get relevant system logs data
 @admin_routes.route("/systemlogs", methods=['GET'])
 def get_system_logs():
     current_app.logger.info('GET /systemlogs route')
@@ -21,11 +22,13 @@ def get_system_logs():
     return response
 
 # ------------------------------------------------------------
+# get all backup schedule data
 @admin_routes.route("/backupschedule", methods=["GET"])
 def get_backup_schedule():
     current_app.logger.info('GET /backupschedule route')
     cursor = db.get_db().cursor()
-    query = """SELECT * FROM Backups"""
+    query = """SELECT b.backup_date, b.backup_status, a.first_name, a.last_name
+      FROM Backups b JOIN Admins a ON b.admin_id = a.admin_id"""
     cursor.execute(query)
     data = cursor.fetchall()
 
@@ -34,11 +37,13 @@ def get_backup_schedule():
     return response
 
 # ------------------------------------------------------------
+# get all advisor requests data
 @admin_routes.route("/advrequests", methods=["GET"])
 def get_admin_requests():
-    current_app.logger.info('GET / advrequests route')
+    current_app.logger.info('GET /advrequests route')
     cursor = db.get_db().cursor()
-    query = """SELECT * FROM Requests"""
+    query = """SELECT r.descr, r.review_status, rt.request_name 
+    FROM Requests r JOIN RequestTypes rt ON r.type_id = rt.type_id"""
     cursor.execute(query)
     data = cursor.fetchall()
 
@@ -47,6 +52,7 @@ def get_admin_requests():
     return response
 
 # ------------------------------------------------------------
+# get all student data
 @admin_routes.route("/studentdata", methods=["GET"])
 def get_student_data():
     current_app.logger.info('GET /studentdata route')
@@ -60,6 +66,7 @@ def get_student_data():
     return response
 
 # ------------------------------------------------------------
+# post new inputted student data
 @admin_routes.route("/studentdata", methods=["POST"])
 def post_student_data():
     data = request.json
@@ -89,6 +96,7 @@ def post_student_data():
         return response
     
 # ------------------------------------------------------------
+# delete student data at the inputted user ID
 @admin_routes.route("/studentdata", methods=["DELETE"])
 def delete_student_data():
     data = request.json
