@@ -27,7 +27,7 @@ def create_app():
     # extensions or your application
     # app.config['SECRET_KEY'] = 'someCrazyS3cR3T!Key.!'
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-
+# comment
     # # these are for the DB object to be able to connect to MySQL. 
     # app.config['MYSQL_DATABASE_USER'] = 'root'
     app.config['MYSQL_DATABASE_USER'] = os.getenv('DB_USER').strip()
