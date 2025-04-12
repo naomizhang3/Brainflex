@@ -10,23 +10,24 @@ API_LINK = "http://api:4000/admin/studentdata"
 # add side bar links
 SideBarLinks()
 
-# set the header of the page
+# add the header
 st.header("Student Data")
 
-# add a dataframe of student data
-student_data = pd.DataFrame(requests.get(API_LINK).json())
+# retrieve and display student data
+student_data = requests.get(API_LINK).json()
 ordered_cols = ["user_id", "nu_id", "first_name", "MI", "last_name", "status"]
-student_data = [student_data[col] for col in ordered_cols]
+student_df = pd.DataFrame(student_data)
+student_df = student_df[[col for col in ordered_cols]]
 with st.expander("View All Student Data"):
-    st.dataframe(student_data)
+    st.dataframe(student_df)
 
 # add spacing for visual clarity
 st.text("")
 
-# add columns for adding/removing student data
+# format columns
 col1, col2 = st.columns(2)
 
-# create a form to submit additional student data
+# submit new student data
 with col1:
     st.write("Add New Student to System")
     with st.form("add_student_form"):
@@ -45,14 +46,13 @@ with col1:
                 "ln": last_name
             }
 
-            response = requests.post(API_LINK, 
-                                     json=data)
+            response = requests.post(API_LINK, json=data)
             if response.status_code == 200:
                 st.success("Student successfully added.")
             else:
                 st.error(f"Failed to add student.")
 
-# create a form to remove student data
+# remove student data
 with col2:
     st.write("Remove Student from System")
     with st.form("remove_student_form"):
@@ -66,7 +66,8 @@ with col2:
             else:
                 data = {"user_id": user_id}
 
-                response = requests.delete(API_LINK, json=data)
+                response = requests.delete("http://api:4000/admin/studentdata", 
+                                            json=data)
                 if response.status_code == 200:
                     st.success("Student data successfully deleted.")
                 else:
