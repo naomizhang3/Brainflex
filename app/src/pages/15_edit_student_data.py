@@ -15,7 +15,8 @@ st.header("Student Data")
 
 # retrieve and display student data
 student_data = requests.get(API_LINK).json()
-ordered_cols = ["user_id", "nu_id", "first_name", "MI", "last_name", "status"]
+ordered_cols = ["user_id", "nu_id", "first_name", "MI", "last_name", 
+                "acct_status"]
 student_df = pd.DataFrame(student_data)
 student_df = student_df[[col for col in ordered_cols]]
 with st.expander("View All Student Data"):

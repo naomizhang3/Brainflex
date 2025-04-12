@@ -10,7 +10,7 @@ admin_routes = Blueprint('admin_routes', __name__)
 def get_system_logs():
     current_app.logger.info('GET /systemlogs route')
     cursor = db.get_db().cursor()
-    query = """SELECT sl.creation_date, sl.resolved_date, lt.name
+    query = """SELECT sl.creation_date, sl.resolved_date, lt.type_name
     FROM SystemLogs sl JOIN LogTypes lt ON sl.type_id = lt.type_id 
     ORDER BY sl.creation_date ASC"""
     cursor.execute(query)
