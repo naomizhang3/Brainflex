@@ -6,6 +6,8 @@ import pandas as pd
 import pydeck as pdk
 from urllib.error import URLError
 from modules.nav import SideBarLinks
+import requests
+
 
 SideBarLinks()
 
@@ -13,4 +15,8 @@ SideBarLinks()
 add_logo("assets/logo.png", height=400)
 
 # set up the page
-st.header("Bookings")
+st.header(f"View the bookings of student {st.session_state['user_id']}")
+
+results = requests.get(f'http://api:4000/s/bookings/{st.session_state["user_id"]}').json()
+st.dataframe(results)
+

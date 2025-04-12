@@ -34,13 +34,18 @@ def get_bookings(course_id, course_num):
 
 # ---------1.2---------------------------------------------------
 @student_routes.route('/bookings/<userID>', methods=['GET'])
-def get_student_bookings(student_id):
+def get_student_bookings(userID):
     current_app.logger.info('GET /bookings/<userID> route')
     cursor = db.get_db().cursor()
-    cursor.execute(f"SELECT b.booking_id, b.scheduled_timen \
-                   FROM Bookings b JOIN BookingParticipants bp \
-                   ON b.booking_id = bp.booking_id  \
-                   JOIN Students s ON bp.student_id = s.{student_id}")
+    query = """
+    SELECT b.booking_id, b.scheduled_time
+    FROM Bookings b
+         JOIN BookingParticipants bp ON b.booking_id = bp.booking_id
+         JOIN Students s ON bp.student_id = s.user_id
+    WHERE s.user_id = %s;
+    """
+
+    cursor.execute(query, (userID))
     
     data = cursor.fetchall()
     
