@@ -4,11 +4,18 @@ import streamlit as st
 from modules.nav import SideBarLinks
 import requests
 
-# Call the SideBarLinks from the nav module in the modules directory
+# add side bar
 SideBarLinks()
 
 # set the header of the page
 st.header("System Logs")
 
-logs = requests.get("http://api:4000/admin/systemlogs").json()
-st.dataframe(logs)
+log_data = requests.get("http://api:4000/admin/systemlogs").json()
+
+log_lines = []
+for row in log_data:
+    creation_date = row["creation_date"]
+    log_name = row["name"]
+    log_lines.append(f"{creation_date} {log_name}")
+
+st.code("\n".join(log_lines), language="text")
