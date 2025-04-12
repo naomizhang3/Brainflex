@@ -62,20 +62,20 @@ def get_student_data():
 # ------------------------------------------------------------
 @admin_routes.route("/studentdata", methods=["POST"])
 def post_student_data():
+    data = request.json
+    current_app.logger.info(data)
+
+    user_id = data["user_id"]
+    nu_id = data["nu_id"]
+    first_name = data["fn"]
+    last_name = data["ln"]
+
+    cursor = db.get_db().cursor()
+    query = """INSERT INTO Students (user_id, nu_id, first_name, last_name) 
+    VALUES (%s, %s, %s, %s)"""
+    current_app.logger.info(query)
+
     try:
-        data = request.json
-        current_app.logger.info(data)
-
-        user_id = data["user_id"]
-        nu_id = data["nu_id"]
-        first_name = data["fn"]
-        last_name = data["ln"]
-
-        cursor = db.get_db().cursor()
-        query = """INSERT INTO Students (user_id, nu_id, first_name, last_name) 
-        VALUES (%s, %s, %s, %s)"""
-        current_app.logger.info(query)
-
         cursor = db.get_db().cursor()
         cursor.execute(query, (user_id, nu_id, first_name, last_name))
         db.get_db().commit()
