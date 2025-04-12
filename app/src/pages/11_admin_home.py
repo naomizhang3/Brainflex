@@ -6,14 +6,16 @@ from modules.nav import SideBarLinks
 
 st.set_page_config(layout = 'wide')
 
-# Show appropriate sidebar links for the role of the currently logged in user
+# add a side bar
 SideBarLinks()
 
+# welcome the user
 st.title(f"Welcome System Administrator, {st.session_state['first_name']}.")
 st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
+# add system admin tasks
 if st.button("Check all system logs", 
              type='primary',
              use_container_width=True):

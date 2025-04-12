@@ -4,7 +4,7 @@ import streamlit as st
 from modules.nav import SideBarLinks
 import requests
 
-# Call the SideBarLinks from the nav module in the modules directory
+# add a sidebar
 SideBarLinks()
 
 # set the header of the page
