@@ -32,7 +32,7 @@ def get_bookings(course_id, course_num):
     response.status_code = 200
     return response
 
-# ---------1.2---------------------------------------------------
+# ---------1.4---------------------------------------------------
 @student_routes.route('/bookings/<userID>', methods=['GET'])
 def get_student_bookings(userID):
     current_app.logger.info('GET /bookings/<userID> route')
@@ -52,8 +52,6 @@ def get_student_bookings(userID):
     the_response = make_response(jsonify(data))
     the_response.status_code = 200
     return the_response
-
-#------------------------------------------------------------
 
 
 

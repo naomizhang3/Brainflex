@@ -56,6 +56,14 @@ def AdminPageNav():
     st.sidebar.page_link("pages/14_requests_review.py", label="↳ Advisor Requests")
     st.sidebar.page_link("pages/15_edit_student_data.py", label="↳ Student Data")
 
+#### ------------------------ Academic Advisor Role ------------------------
+def AdvisorPageNav():
+    st.sidebar.page_link("pages/31_advisor_home.py", label="Academic Advisor Home", icon="👨‍🏫")
+    st.sidebar.page_link("pages/32_send_requests.py", label="↳ Send Requests")
+    st.sidebar.page_link("pages/33_view_payments.py", label="↳ View Payments")
+    st.sidebar.page_link("pages/34_user_active_min.py", label="↳ User Activity")
+    st.sidebar.page_link("pages/35_booking_ratings.py", label="↳ Booking Ratings")
+
 # --------------------------------Links Function -----------------------------------------------
 def SideBarLinks(show_home=False):
     """
@@ -92,6 +100,10 @@ def SideBarLinks(show_home=False):
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state["role"] == "administrator":
             AdminPageNav()
+        
+        # If the user is an administrator, give them access to the administrator pages
+        if st.session_state["role"] == "advisor":
+            AdvisorPageNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
