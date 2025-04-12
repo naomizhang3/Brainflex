@@ -10,11 +10,7 @@ from modules.nav import SideBarLinks
 SideBarLinks()
 
 st.write("""
-# Simple Iris Flower Prediction App
-
-This example is borrowed from [The Data Professor](https://github.com/dataprofessor/streamlit_freecodecamp/tree/main/app_7_classification_iris)
-         
-This app predicts the **Iris flower** type!
+# Reschedule booking here.
 """)
 
 st.sidebar.header('User Input Parameters')

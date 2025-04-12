@@ -17,19 +17,24 @@ st.write('### What would you like to do today?')
 if st.button('Find students', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/11_PredictionV2.py')
+  st.switch_page('pages/11_find_students.py')
 
 if st.button('View Bookings', 
              type='primary',
              use_container_width=True):
   st.switch_page('pages/12_API_Test.py')
 
-if st.button("Reschedule bookings",
+if st.button("Reschedule Bookings",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/13_Classification.py')
+  st.switch_page('pages/13_reschedule_bookings.py')
 
-if st.button("View earning dashboard",
+if st.button("Add Bio",
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/33_view_payments.py')
+
+if st.button("View Earnings",
              type='primary',
              use_container_width=True):
   st.switch_page('pages/33_view_payments.py')
