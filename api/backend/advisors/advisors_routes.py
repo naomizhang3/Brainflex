@@ -3,11 +3,11 @@ import json
 from backend.db_connection import db
 from backend.simple.playlist import sample_playlist_data
 
-# This blueprint handles some basic routes that you can use for testing
-advisors_routes = Blueprint('advisors_routes', __name__)
+# This blueprint handles advisor routes
+advisor_routes = Blueprint('advisor_routes', __name__)
 
 # ------------------------------------------------------------
-@advisors_routes.route('/')
+@advisor_routes.route('/')
 def welcome():
     current_app.logger.info('GET / handler')
     welcome_message = '<h1>ADVISORS'
@@ -16,7 +16,7 @@ def welcome():
     return response
 
 # ------------------------------------------------------------
-@admin_routes.route("/payments", methods=["GET"])
+@advisor_routes.route("/payments", methods=["GET"])
 def get_payments():
     current_app.logger.info('GET /payments route')
     cursor = db.get_db().cursor()
