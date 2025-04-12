@@ -4,15 +4,22 @@ from modules.nav import SideBarLinks
 
 SideBarLinks()
 
-st.write("# About this App")
+st.write("# About BrainFlex")
 
 st.markdown (
     """
-    This is a demo app for CS 3200 Course Project.  
+    BrainFlex is a Northeastern tutoring app that leverages a data-driven
+    matching system to connect learners with tutors based on personality traits 
+    and learning styles. 
+    
+    By tailoring connections to individual needs, 
+    BrainFlex uses data to help students access the necessary academic support 
+    to enhance their education. Through the collection, storage, and analysis 
+    of data, BrainFlex differentiates itself from existing tutor apps by 
+    offering greater personalization for users and greater efficiency and 
+    accessibility for system administrators and decision-makers. 
 
-    The goal of this demo is to provide information on the tech stack 
-    being used as well as demo some of the features of the various platforms. 
-
-    Stay tuned for more information and features to come!
+    By blending personalization with interactivity, BrainFlex transforms 
+    tutoring into an intuitive and enjoyable experience.
     """
         )

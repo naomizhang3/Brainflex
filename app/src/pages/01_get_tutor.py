@@ -14,7 +14,7 @@ import requests
 SideBarLinks()
 
 # set the header of the page
-st.header('Getting tutors for classes')
+st.header('Tutor Search')
 
 # You can access the session state to make a more customized/personalized app experience
 st.write(f"### Hi, {st.session_state['first_name']}.")
@@ -34,7 +34,7 @@ logger.info(f'var_01 = {var_01}')
 logger.info(f'var_02 = {var_02}')
 
 
-if st.button('Calculate Prediction',
+if st.button('Find Tutors',
              type='primary',
              use_container_width=True):
   results = requests.get(f'http://api:4000/s/tutors/{var_01}/{var_02}').json()
