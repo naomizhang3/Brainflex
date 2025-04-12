@@ -33,22 +33,22 @@ def get_bookings(course_id, course_num):
     return response
 
 # ---------1.2---------------------------------------------------
-# @student_routes.route('/bookings/<userID>', methods=['GET'])
-# def get_bookings(student_id):
-#     current_app.logger.info('GET /customers/<userID> route')
-#     cursor = db.get_db().cursor()
-#     cursor.execute(f"SELECT b.booking_id, b.scheduled_timen \
-#                    FROM Bookings b JOIN BookingParticipants bp \
-#                    ON b.booking_id = bp.booking_id  \
-#                    JOIN Students s ON bp.student_id = s.{student_id}")
+@student_routes.route('/bookings/<userID>', methods=['GET'])
+def get_student_bookings(student_id):
+    current_app.logger.info('GET /bookings/<userID> route')
+    cursor = db.get_db().cursor()
+    cursor.execute(f"SELECT b.booking_id, b.scheduled_timen \
+                   FROM Bookings b JOIN BookingParticipants bp \
+                   ON b.booking_id = bp.booking_id  \
+                   JOIN Students s ON bp.student_id = s.{student_id}")
     
-#     data = cursor.fetchall()
+    data = cursor.fetchall()
     
-#     the_response = make_response(jsonify(data))
-#     the_response.status_code = 200
-#     return the_response
+    the_response = make_response(jsonify(data))
+    the_response.status_code = 200
+    return the_response
 
-# ------------------------------------------------------------
+#------------------------------------------------------------
 
 
 
