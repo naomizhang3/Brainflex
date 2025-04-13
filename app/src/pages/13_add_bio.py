@@ -7,8 +7,6 @@ import pandas as pd
 
 
 # for post/tutors add bio
-
-
 # Call the SideBarLinks from the nav module in the modules directory
 SideBarLinks()
 
@@ -17,26 +15,18 @@ SideBarLinks()
 st.header("Add Bio")
 
 
-
-
 # add spacing for visual clarity
 st.text("")
 
-
-# format columns
-# col1 = st.columns(1)
-
-
 # adding new info to bio
-# with col1:
 st.write("Add information for bio")
+
 with st.form("add_tutor_bio"):
     first_name = st.text_input('First Name:')
     last_name = st.text_input('Last Name:')
-    bio = st.text_input['Bio:']
-       
-    submitted = st.form_submit_button("Submit")
+    bio = st.text_input('Bio:')
 
+    submitted = st.form_submit_button("Submit")
 
     if submitted:
         data = {
@@ -45,11 +35,10 @@ with st.form("add_tutor_bio"):
             "bio" : bio
         }
 
-
         response = requests.post("http://api:4000/t/add_bio", json=data)
-        if response.status_code == 200:
+        if response.status_code == 100:
             st.success("Bio successfully added.")
         else:
-            st.error(f"Failed to add bio.")
+            st.error("Failed to add bio.")
 
 

@@ -12,17 +12,12 @@ SideBarLinks()
 st.title(f"Welcome Tutor, {st.session_state['first_name']}.")
 st.write('')
 st.write('')
-st.write('### What would you like to do today?')  
-
-if st.button('Find students', 
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/11_find_students.py')
+st.write('### What would you like to do today?')
 
 if st.button('View Bookings', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/12_API_Test.py')
+  st.switch_page('pages/13_view_tutor_bookings.py')
 
 if st.button("Reschedule Bookings",
              type='primary',
@@ -32,12 +27,12 @@ if st.button("Reschedule Bookings",
 if st.button("Add Bio",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/33_view_payments.py')
+  st.switch_page('pages/13_add_bio.py')
 
 if st.button("View Earnings",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/33_view_payments.py')
+  st.switch_page('pages/13_view_earnings.py')
   
 
   

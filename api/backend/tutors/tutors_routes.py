@@ -7,11 +7,7 @@ from backend.simple.playlist import sample_playlist_data
 # This blueprint handles some basic routes that you can use for testing
 tutors_routes = Blueprint('tutors_routes', __name__)
 
-
-# ------------------------------------------------------------
-# GET /transactions/{tutor_id} -------------------------------
-
-
+# GET /transactions/{tutor_id} --------------------------------
 @tutors_routes.route('/transactions', methods=["GET"])
 def get_transactions():
     current_app.logger.info('GET / transactions route')
@@ -26,7 +22,7 @@ def get_transactions():
     return response
 
 
-# POST /tutors/{tutor_id} --------------------------------
+# POST /tutors/{tutor_id} --------------------------------------
 @tutors_routes.route("add_bio", methods=["POST"])
 def post_transactions():
     data = request.json
@@ -66,3 +62,14 @@ def post_transactions():
 
 
 # GET /bookings/{user_id} ---------------------------------------------
+@tutors_routes.route('/Bookings', methods=["GET"])
+def get_Bookings():
+    current_app.logger.info('GET / Bookings route')
+    cursor = db.get_db().cursor()
+    query = """SELECT * FROM Bookings"""
+    cursor.execute(query)
+    data = cursor.fetchall()
+
+    response = make_response(jsonify(data))
+    response.status_code = 200
+    return response
