@@ -32,7 +32,7 @@ if st.button('Book a session',
 if st.button('Reschedule bookings', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/02_Map_Demo.py')
+  st.switch_page('pages/04_reschedule_booking.py')
   
 if st.button('Cancel bookings', 
              type='primary',

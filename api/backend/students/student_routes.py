@@ -57,32 +57,6 @@ def get_student_bookings(userID):
 @student_routes.route("/createbookings", methods=["POST"])
 def post_bookings_data():
 
-    # data = request.json
-    # current_app.logger.info(data)
-
-    # user_id = data["user_id"]
-    # nu_id = data["nu_id"]
-    # first_name = data["fn"]
-    # last_name = data["ln"]
-
-    # cursor = db.get_db().cursor()
-    # query = """INSERT INTO Students (user_id, nu_id, first_name, last_name) 
-    # VALUES (%s, %s, %s, %s)"""
-    # current_app.logger.info(query)
-
-    # try:
-    #     cursor = db.get_db().cursor()
-    #     cursor.execute(query, (user_id, nu_id, first_name, last_name))
-    #     db.get_db().commit()
-
-    #     response = make_response("Successfully added student")
-    #     response.status_code = 200
-    #     return response
-    # except:
-    #     response = make_response("Failed to add student")
-    #     response.status_code = 400
-    #     return response
-
     data = request.json
     current_app.logger.info('POST /createbookings route')
     cursor = db.get_db().cursor()
@@ -121,67 +95,29 @@ def post_bookings_data():
         response = make_response("Failed to schedule a booking")
         response.status_code = 400
         return response
-# Get all customers from the system
-# @customers.route("/bookings/", methods=['GET'])
-# def get_customers():
 
-#     cursor = db.get_db().cursor()
-#     cursor.execute('''SELECT id, company, last_name,
-#                     first_name, job_title, business_phone FROM customers
-#     ''')
+#------------------------------------------------------------
+# Update customer info for customer with particular userID
+#   Notice the manner of constructing the query.
+@student_routes.route('/bookings/<userID>/<booking_id>', methods=['PUT'])
+def update_bookings(userID, booking_id):
+    data = request.json
+    current_app.logger.info('PUT /bookings/<userID>/<booking_id> route')
+    time = data['time']
+
+
+    query = """UPDATE Bookings
+    SET scheduled_time = %s
+    WHERE booking_id = %s;"""
     
-#     theData = cursor.fetchall()
-    
-#     the_response = make_response(jsonify(theData))
-#     the_response.status_code = 200
-#     return the_response
-
-# #------------------------------------------------------------
-# # Update customer info for customer with particular userID
-# #   Notice the manner of constructing the query.
-# @customers.route('/customers', methods=['PUT'])
-# def update_customer():
-#     current_app.logger.info('PUT /customers route')
-#     cust_info = request.json
-#     cust_id = cust_info['id']
-#     first = cust_info['first_name']
-#     last = cust_info['last_name']
-#     company = cust_info['company']
-
-#     query = 'UPDATE customers SET first_name = %s, last_name = %s, company = %s where id = %s'
-#     data = (first, last, company, cust_id)
-#     cursor = db.get_db().cursor()
-#     r = cursor.execute(query, data)
-#     db.get_db().commit()
-#     return 'customer updated!'
-
-# #------------------------------------------------------------
-# # Get customer detail for customer with particular userID
-# #   Notice the manner of constructing the query. 
-# @customers.route('/customers/<userID>', methods=['GET'])
-# def get_customer(userID):
-#     current_app.logger.info('GET /customers/<userID> route') 
-#     cursor = db.get_db().cursor()
-#     cursor.execute('SELECT id, first_name, last_name FROM customers WHERE id = {0}'.format(userID))
-    
-#     theData = cursor.fetchall()
-    
-#     the_response = make_response(jsonify(theData))
-#     the_response.status_code = 200
-#     return the_response
-
-# #------------------------------------------------------------
-# # Makes use of the very simple ML model in to predict a value
-# # and returns it to the user
-# @customers.route('/prediction/<var01>/<var02>', methods=['GET'])
-# def predict_value(var01, var02):
-#     current_app.logger.info(f'var01 = {var01}')
-#     current_app.logger.info(f'var02 = {var02}')
-
-#     returnVal = predict(var01, var02)
-#     return_dict = {'result': returnVal}
-
-#     the_response = make_response(jsonify(return_dict))
-#     the_response.status_code = 200
-#     the_response.mimetype = 'application/json'
-#     return the_response
+    try:
+        cursor = db.get_db().cursor()
+        r = cursor.execute(query, (time, booking_id))
+        db.get_db().commit()
+        response = make_response("Successfully rescheduled a booking")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to reschedule a booking")
+        response.status_code = 400
+        return response
