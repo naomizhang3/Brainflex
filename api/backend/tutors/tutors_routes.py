@@ -22,28 +22,26 @@ def get_transactions():
     return response
 
 
-# POST /tutors/{tutor_id} --------------------------------------
-@tutors_routes.route("add_bio", methods=["POST"])
-def post_transactions():
+# PUT /tutors/{tutor_id} --------------------------------------
+@tutors_routes.route("add_bio", methods=["PUT"])
+def update_add_bio():
     data = request.json
     current_app.logger.info(data)
 
-
-    # change
-    first_name = data["first_name"]
-    last_name = data["last_name"]
+    user_id = data["user_id"]
     bio = data["bio"]
 
-
     cursor = db.get_db().cursor()
-    query = """INSERT INTO Students (first_name, last_name, bio)
-    VALUES (%s, %s, %s)"""
+    query = """
+        UPDATE Tutors
+        SET bio = %s
+        WHERE user_id = %s;
+    """
     current_app.logger.info(query)
-
 
     try:
         cursor = db.get_db().cursor()
-        cursor.execute(query, (first_name, last_name, bio))
+        cursor.execute(query, (bio, user_id))
         db.get_db().commit()
 
 
