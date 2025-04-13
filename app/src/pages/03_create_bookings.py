@@ -33,7 +33,6 @@ with st.form("create_booking_form"):
     selected_date = st.date_input("Pick a date: ")
     selected_time = st.time_input("Pick a time: ")
     combined_datetime = datetime.combine(selected_date, selected_time)
-    
     tutor_id = st.text_input("Enter a Tutor's Id")
 
     submitted = st.form_submit_button("Submit")
@@ -41,16 +40,15 @@ with st.form("create_booking_form"):
     if submitted:
         data = {
             "booking_id": booking_id,
-            "completion_status": "scheduled",  # Change as needed
+            "completion_status": True,
             "creation_time": datetime.now().isoformat(),
             "scheduled_time": combined_datetime.isoformat(),
             "tutor_id": tutor_id,
-            "student_id": st.session_state['user_id'],  # Assumes login stored this
-            "rating": rating
+            "student_id": st.session_state['user_id'],
         }
 
         response = requests.post(API_LINK, json=data)
         if response.status_code == 200:
             st.success("Booking successfully created.")
         else:
-            st.error("Failed to schedule booking.")
+            st.error(f"Failed to schedule booking")

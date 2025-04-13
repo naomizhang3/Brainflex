@@ -56,6 +56,33 @@ def get_student_bookings(userID):
 #1.2---------------------------------------------------------
 @student_routes.route("/createbookings", methods=["POST"])
 def post_bookings_data():
+
+    # data = request.json
+    # current_app.logger.info(data)
+
+    # user_id = data["user_id"]
+    # nu_id = data["nu_id"]
+    # first_name = data["fn"]
+    # last_name = data["ln"]
+
+    # cursor = db.get_db().cursor()
+    # query = """INSERT INTO Students (user_id, nu_id, first_name, last_name) 
+    # VALUES (%s, %s, %s, %s)"""
+    # current_app.logger.info(query)
+
+    # try:
+    #     cursor = db.get_db().cursor()
+    #     cursor.execute(query, (user_id, nu_id, first_name, last_name))
+    #     db.get_db().commit()
+
+    #     response = make_response("Successfully added student")
+    #     response.status_code = 200
+    #     return response
+    # except:
+    #     response = make_response("Failed to add student")
+    #     response.status_code = 400
+    #     return response
+
     data = request.json
     current_app.logger.info('POST /createbookings route')
     cursor = db.get_db().cursor()
@@ -64,16 +91,17 @@ def post_bookings_data():
     completion_status = data["completion_status"]
     creation_time = data["creation_time"]
     scheduled_time = data["scheduled_time"]
-
+    
     tutor_id = data["tutor_id"]
     student_id = data["student_id"]
-    rating = data["rating"]
 
     query_bookings = """INSERT INTO Bookings (booking_id, completion_status, creation_time, scheduled_time)
     VALUES (%s, %s, %s, %s);"""
 
-    query_bparticipants = """INSERT INTO BookingParticipants (tutor_id, student_id, booking_id, rating)
-    VALUES (%s, %s, %s, %s);"""
+    query_bparticipants = """INSERT INTO BookingParticipants (tutor_id, student_id, booking_id)
+    VALUES (%s, %s, %s);"""
+
+
 
     current_app.logger.info(query_bookings)
     current_app.logger.info(query_bparticipants)
@@ -81,7 +109,9 @@ def post_bookings_data():
     try:
         cursor = db.get_db().cursor()
         cursor.execute(query_bookings, (booking_id, completion_status, creation_time, scheduled_time))
-        cursor.execute(query_bparticipants, (tutor_id, student_id, booking_id, rating))
+        cursor = db.get_db().cursor()
+
+        cursor.execute(query_bparticipants, (int(tutor_id), int(student_id), int(booking_id)))
         db.get_db().commit()
 
         response = make_response("Successfully scheduled a booking")
