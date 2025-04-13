@@ -42,3 +42,51 @@ def get_useractivity():
     response = make_response(jsonify(response_data))
     response.status_code = 200
     return response
+
+# 4.1 Get average tutor ratings per tutor across all bookings-----
+@advisor_routes.route("/bookings", methods=["GET"])
+def get_bookings():
+    current_app.logger.info('GET /bookings route')
+    cursor = db.get_db().cursor()
+    query = """
+    SELECT AVG(rating) AS `Overall Average Rating`, BP.tutor_id, T.first_name, T.last_name
+    FROM BookingParticipants as BP
+        JOIN Tutors as T ON BP.tutor_id = T.user_id
+    GROUP BY BP.tutor_id
+    """
+
+    cursor.execute(query)
+    data = cursor.fetchall()
+
+    response = make_response(jsonify(data))
+    response.status_code = 200
+    return response
+
+# 4.4 Send a request to the system admin-------------------------
+@advisor_routes.route("/requests", methods = ["POST"])
+def post_request():
+    data = request.json
+    current_app.logger.info(data)
+    
+    request_id = data["request_id"]
+    description = data["description"]
+    sent_by = data["sent_by"]
+    type_id = data["type_id"]
+
+    cursor = db.get_db().cursor()
+    query = "INSERT INTO Requests (request_id, descr, sent_by, type_id, reviewed_by) " \
+    "VALUES (%s, %s, %s, %s, NULL)"
+    current_app.logger.info(query)
+
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (int(request_id), description, int(sent_by), int(type_id)))
+        db.get_db().commit()
+
+        response = make_response("Successfully sent request")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to send request")
+        response.status_code = 400
+        return response

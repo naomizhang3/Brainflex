@@ -16,3 +16,5 @@ SideBarLinks()
 # set the header of the page
 st.header("Send Requests to Admin")
 
+st.text("")
+

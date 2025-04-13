@@ -14,7 +14,7 @@ st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
-if st.button("Send a request to an admin", 
+if st.button("Send requests to admin", 
              type='primary',
              use_container_width=True):
   st.switch_page('pages/32_send_requests.py')

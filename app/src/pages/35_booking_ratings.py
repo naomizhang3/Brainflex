@@ -18,3 +18,4 @@ st.header("View Booking Ratings")
 
 # add spacing for visual clarity
 st.text("")
+
