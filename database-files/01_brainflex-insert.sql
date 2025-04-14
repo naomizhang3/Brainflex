@@ -50,8 +50,8 @@ VALUES
 
 INSERT INTO Courses (course_id, course_num, section, professor)
 VALUES 
-('CS', 3200, '8', 'Fontenot'),
-('DS', 2500, '5', 'Strange');
+('CS', 3200, 8, 'Fontenot'),
+('DS', 2500, 5, 'Strange');
 
 INSERT INTO RegisteredCourses (user_id, course_id, course_num)
 VALUES 

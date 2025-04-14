@@ -118,7 +118,7 @@ DROP TABLE IF EXISTS Courses;
 CREATE TABLE Courses (
     course_id  varchar(25),
     course_num INT,
-    section    VARCHAR(50),
+    section    INT,
     professor  VARCHAR(50),
     PRIMARY KEY(course_id, course_num)
 );
