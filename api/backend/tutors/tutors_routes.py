@@ -41,12 +41,14 @@ def update_add_bio():
         return response
    
 # 2.3 --- GET /bookings/{user_id} --------------------------------------
-@tutors_routes.route('/Bookings', methods=["GET"])
-def get_Bookings():
-    current_app.logger.info('GET / Bookings route')
+@tutors_routes.route('/bookings/<tutor_id>', methods=["GET"])
+def get_bookings(tutor_id):
+    current_app.logger.info('GET / bookings route')
     cursor = db.get_db().cursor()
-    query = """SELECT * FROM Bookings"""
-    cursor.execute(query)
+    query = """SELECT b.booking_id, b.scheduled_time FROM Bookings b
+        JOIN BookingParticipants bp ON b.booking_id = bp.booking_id
+        JOIN Tutors t ON bp.tutor_id = t.user_id WHERE t.user_id = %s;"""
+    cursor.execute(query, (tutor_id))
     data = cursor.fetchall()
 
     response = make_response(jsonify(data))
