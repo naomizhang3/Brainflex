@@ -25,7 +25,7 @@ if submitted:
     else:
         data = {"booking_id": booking_id}
 
-        response = requests.delete("http://api:4000/t/deletetutorbookings", json=data)
+        response = requests.delete("http://api:4000/t/deletebookings", json=data)
         if response.status_code == 200:
             st.success("Boooking successfully deleted.")
         else:

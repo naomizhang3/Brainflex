@@ -71,7 +71,7 @@ def get_transactions():
 
 # 2.6 --- DELETE /bookings/{booking_id} ---------------------
 # delete booking data at the inputted booking ID
-@tutors_routes.route('/deletetutorbookings', methods=["DELETE"])
+@tutors_routes.route('/deletebookings', methods=["DELETE"])
 def delete_tutor_bookings():
     data = request.json
     current_app.logger.info(data)
