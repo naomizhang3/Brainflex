@@ -19,10 +19,10 @@ if st.button('View Bookings',
              use_container_width=True):
   st.switch_page('pages/13_view_tutor_bookings.py')
 
-if st.button("Reschedule Bookings",
+if st.button("Cancel Bookings",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/13_reschedule_bookings.py')
+  st.switch_page('pages/13_delete_bookings.py')
 
 if st.button("Add Bio",
              type='primary',
