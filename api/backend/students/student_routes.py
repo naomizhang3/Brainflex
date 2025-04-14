@@ -121,3 +121,25 @@ def update_bookings(userID, booking_id):
         response = make_response("Failed to reschedule a booking")
         response.status_code = 400
         return response
+    
+#--------------------------------------------------
+@student_routes.route('/cancel-bookings/<booking_id>', methods=["DELETE"])
+def delete_tutor_bookings(booking_id):
+    current_app.logger.info("delete /cancel-bookings/<booking_id>")
+
+    cursor = db.get_db().cursor()
+    query = """DELETE FROM Bookings WHERE booking_id = %s"""
+    current_app.logger.info(query)
+    
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (booking_id))
+        db.get_db().commit()
+
+        response = make_response("Booking successfully deleted.")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to delete booking.")
+        response.status_code = 400
+        return response

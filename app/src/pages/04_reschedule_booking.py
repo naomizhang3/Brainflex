@@ -34,4 +34,3 @@ with st.form("reschedulebooking"):
           st.success("Booking Sucessfully Rescheduled")
       else:
           st.error("Failed.")
-
