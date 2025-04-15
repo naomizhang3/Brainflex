@@ -8,7 +8,34 @@ from backend.simple.playlist import sample_playlist_data
 tutors_routes = Blueprint('tutors_routes', __name__)
 
 # 2.1 --- POST /registeredcourses/{tutor_id} --------------------------
+@tutors_routes.route("/register-couses/<user_id>", methods=["POST"])
+def post_bookings_data(user_id):
 
+    data = request.json
+    current_app.logger.info('POST /register-couses/<user_id>')
+    cursor = db.get_db().cursor()
+
+    course_id = data["course_id"]
+    course_num = data["course_num"]
+    
+    query_bookings = """INSERT INTO RegisteredCourses
+    (user_id, course_id, course_num)
+    VALUES (%s, %s, %s);
+    """
+    current_app.logger.info(query_bookings)
+
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query_bookings, (int(user_id), course_id, course_num))
+        db.get_db().commit()
+
+        response = make_response("Successfully added a tutorable class")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to add a tutorable class")
+        response.status_code = 400
+        return response
 # 2.2 --- PUT /tutors/{tutor_id} --------------------------------------
 @tutors_routes.route("add_bio", methods=["PUT"])
 def update_add_bio():

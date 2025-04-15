@@ -35,4 +35,7 @@ if st.button("View Earnings",
   st.switch_page('pages/13_view_earnings.py')
   
 
-  
+if st.button("Add tutorable courses",
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/14_add_courses.py')
