@@ -3,8 +3,7 @@ from backend.db_connection import db
 
 admin_routes = Blueprint('admin_routes', __name__)
 
-# ------------------------------------------------------------
-# 3.3 get relevant system logs data
+# -------------3.3 get relevant system logs data---------------
 @admin_routes.route("/systemlogs", methods=['GET'])
 def get_system_logs():
     current_app.logger.info('GET /systemlogs route')
@@ -19,8 +18,7 @@ def get_system_logs():
     response.status_code = 200
     return response
 
-# ------------------------------------------------------------
-# 3.5 get all backup schedule data
+# ------------3.5 get all backup schedule data----------------
 @admin_routes.route("/backupschedule", methods=["GET"])
 def get_backup_schedule():
     current_app.logger.info('GET /backupschedule route')
@@ -34,8 +32,7 @@ def get_backup_schedule():
     response.status_code = 200
     return response
 
-# ------------------------------------------------------------
-# 3.6 get all advisor requests data
+# -------------3.6 get all advisor requests data-------------------
 @admin_routes.route("/advrequests", methods=["GET"])
 def get_admin_requests():
     current_app.logger.info('GET /advrequests route')
@@ -49,8 +46,7 @@ def get_admin_requests():
     response.status_code = 200
     return response
 
-# ------------------------------------------------------------
-# get all student data
+# ------------3.4 get all student data-------------------------------
 @admin_routes.route("/studentdata", methods=["GET"])
 def get_student_data():
     current_app.logger.info('GET /studentdata route')
@@ -63,8 +59,7 @@ def get_student_data():
     response.status_code = 200
     return response
 
-# ------------------------------------------------------------
-# 3.2 post new inputted student data
+# ------------3.2 post new inputted student data--------------------
 @admin_routes.route("/studentdata", methods=["POST"])
 def post_student_data():
     data = request.json
@@ -92,8 +87,7 @@ def post_student_data():
         response.status_code = 400
         return response
     
-# ------------------------------------------------------------
-# 3.1 delete student data at the inputted user ID
+# ---------3.1 delete student data at the inputted user ID------------
 @admin_routes.route("/studentdata", methods=["DELETE"])
 def delete_student_data():
     data = request.json
