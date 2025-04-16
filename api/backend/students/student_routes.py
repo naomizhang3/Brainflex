@@ -15,13 +15,9 @@ student_routes = Blueprint("student_routes", __name__)
 
 @student_routes.route('/tutors/<course_id>/<course_num>', methods=['GET'])
 def get_bookings(course_id, course_num):
-    # response.status_code = 200
-
-    
-    # return 'HIII'
     current_app.logger.info('GET /tutors/<course_id>/<course_num> route')
     cursor = db.get_db().cursor()
-    query = """SELECT t.first_name, t.last_name, t.bio
+    query = """SELECT t.user_id, t.first_name, t.last_name, t.bio
                FROM Tutors t
                JOIN RegisteredCourses rc ON t.user_id = rc.user_id
                WHERE course_id = %s AND course_num = %s;"""
@@ -38,10 +34,11 @@ def get_student_bookings(userID):
     current_app.logger.info('GET /bookings/<userID> route')
     cursor = db.get_db().cursor()
     query = """
-    SELECT b.booking_id, b.scheduled_time
+    SELECT b.booking_id, t.first_name, t.last_name, b.scheduled_time
     FROM Bookings b
          JOIN BookingParticipants bp ON b.booking_id = bp.booking_id
          JOIN Students s ON bp.student_id = s.user_id
+         JOIN Tutors t ON bp.tutor_id = t.user_id
     WHERE s.user_id = %s;
     """
 

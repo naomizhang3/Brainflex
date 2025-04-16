@@ -10,6 +10,10 @@ import plotly.express as px
 from modules.nav import SideBarLinks
 import requests
 
+ORDERED = ["user_id", "first_name", "last_name", "bio"]
+UI_ORDERED = ["Tutor ID", "First Name", "Last Name", "Bio"]
+COL_MAPPER = {ORDERED[i]: UI_ORDERED[i] for i in range(len(ORDERED))}
+
 # Call the SideBarLinks from the nav module in the modules directory
 SideBarLinks()
 
@@ -38,5 +42,6 @@ if st.button('Find Tutors',
              type='primary',
              use_container_width=True):
   results = requests.get(f'http://api:4000/s/tutors/{var_01}/{var_02}').json()
-#   results = requests.get(f'http://api:4000/c/prediction/{var_01}/{var_02}').json()
-  st.dataframe(results)
+  results_df = pd.DataFrame(results)
+  tutors_df = results_df[[col for col in ORDERED]].rename(columns=COL_MAPPER)
+  st.dataframe(tutors_df)

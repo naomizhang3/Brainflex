@@ -12,6 +12,8 @@ import requests
 from datetime import datetime
 
 API_LINK = "http://api:4000/s/createbookings"
+COL_MAPPER = {"booking_id": "Booking ID", "first_name": "First Name", 
+              "last_name": "Last Name", "scheduled_time": "Scheduled Time"}
 
 # Call the SideBarLinks from the nav module in the modules directory
 SideBarLinks()
@@ -24,7 +26,7 @@ st.text("")
 
 student_id = st.session_state['user_id']
 booking_data = requests.get(f"http://api:4000/s/bookings/{student_id}").json()
-booking_data_df = pd.DataFrame(booking_data)
+booking_data_df = pd.DataFrame(booking_data).rename(columns=COL_MAPPER)
 st.dataframe(booking_data_df)
 
 st.write("Schedule a Booking")

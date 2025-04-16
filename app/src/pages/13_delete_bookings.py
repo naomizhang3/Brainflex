@@ -27,6 +27,6 @@ if submitted:
 
         response = requests.delete("http://api:4000/t/deletebookings", json=data)
         if response.status_code == 200:
-            st.success("Boooking successfully deleted.")
+            st.success("Booking successfully deleted.")
         else:
             st.error("Failed to delete booking")
