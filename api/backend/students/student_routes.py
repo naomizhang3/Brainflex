@@ -10,7 +10,7 @@ from backend.db_connection import db
 student_routes = Blueprint("student_routes", __name__)
 
 
-#-----1.1 Get tutors data for specific courses---------
+#--------------1.1 Get tutors data for specific courses----------------
 @student_routes.route('/tutors/<course_id>/<course_num>', methods=['GET'])
 def get_bookings(course_id, course_num):
     current_app.logger.info('GET /tutors/<course_id>/<course_num> route')
@@ -27,7 +27,7 @@ def get_bookings(course_id, course_num):
     response.status_code = 200
     return response
 
-# ---------1.4 Get all bookings associated with the student---------------------
+# ----------------1.4 Get all bookings associated with the student-----------
 @student_routes.route('/bookings/<userID>', methods=['GET'])
 def get_student_bookings(userID):
     current_app.logger.info('GET /bookings/<userID> route')
@@ -49,7 +49,7 @@ def get_student_bookings(userID):
     the_response.status_code = 200
     return the_response
 
-# 1.2 create a new booking-----------------------------------------------------
+# ------------------ 1.2 create a new booking--------------------------
 @student_routes.route("/createbookings", methods=["POST"])
 def post_bookings_data():
 
@@ -89,8 +89,8 @@ def post_bookings_data():
         response.status_code = 400
         return response
 
-#------------------------------------------------------------
-# 1.3 update booking data
+
+# -------------------1.3 update booking data----------------------
 @student_routes.route('/bookings/<userID>/<booking_id>', methods=['PUT'])
 def update_bookings(booking_id):
     data = request.json
@@ -113,7 +113,7 @@ def update_bookings(booking_id):
         response.status_code = 400
         return response
     
-# 1.3 delete booking data--------------------------------------------------
+# ------------------1.3 delete booking data---------------------------
 @student_routes.route('/cancel-bookings/<booking_id>', methods=["DELETE"])
 def delete_tutor_bookings(booking_id):
     current_app.logger.info("delete /cancel-bookings/<booking_id>")

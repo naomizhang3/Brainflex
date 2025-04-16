@@ -4,7 +4,7 @@ from backend.db_connection import db
 # This blueprint handles advisor routes
 advisor_routes = Blueprint('advisor_routes', __name__)
 
-# 4.6 Get all payments-----------------------------------------
+#----------------- 4.6 Get all payments--------------------------
 @advisor_routes.route("/payments", methods=["GET"])
 def get_payments():
     current_app.logger.info('GET /payments route')
@@ -17,7 +17,7 @@ def get_payments():
     response.status_code = 200
     return response
 
-# 4.2 Get active user minutes-----------------------------------
+# ---------------- 4.2 Get active user minutes---------------------
 @advisor_routes.route("/useractivity", methods=["GET"])
 def get_useractivity():
     current_app.logger.info('GET /useractivity route')
@@ -40,7 +40,7 @@ def get_useractivity():
     response.status_code = 200
     return response
 
-# 4.1 Get average tutor ratings per tutor across all bookings-----
+# ------4.1 Get average tutor ratings per tutor across all bookings------
 @advisor_routes.route("/bookings", methods=["GET"])
 def get_bookings():
     current_app.logger.info('GET /bookings route')
@@ -59,7 +59,7 @@ def get_bookings():
     response.status_code = 200
     return response
 
-# Get all request types -----------------------------------------
+#---------------- Get all request types ------------------------
 @advisor_routes.route("/requesttypes", methods=["GET"])
 def get_request_types():
     current_app.logger.info('GET /requesttypes route')
@@ -72,7 +72,7 @@ def get_request_types():
     response.status_code = 200
     return response
 
-# 4.4 Send a request to the system admin-------------------------
+# ------------------ 4.4 Send a request to the system admin ---------------------
 @advisor_routes.route("/requests", methods = ["POST"])
 def post_request():
     data = request.json
@@ -100,7 +100,7 @@ def post_request():
         response.status_code = 400
         return response
     
-# 4.5 Check tutor supplies ---------------------------------------
+# ---------------- 4.5 Check tutor supplies --------------------------
 @advisor_routes.route("/tutorsupplies", methods = ["GET"])
 def get_tutor_count():
     current_app.logger.info("GET /tutorsupplies")

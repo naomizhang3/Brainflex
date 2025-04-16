@@ -18,6 +18,10 @@ with st.form("register_courses"):
     dept_id = st.text_input("Department Id")
     course_num = st.text_input("Course Number")
     submitted = st.form_submit_button("Submit")
+    # course_id = 0;
+
+# get course_id where dept_id = dept_id and course_num = course_num
+# set course_id to that, then put into data
 
     if submitted:
         data = {
