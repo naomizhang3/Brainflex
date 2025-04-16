@@ -10,6 +10,12 @@ import plotly.express as px
 from modules.nav import SideBarLinks
 import requests
 
+ORDERED = ["amount", "earned_date", "payment_date", "transaction_status", 
+           "booking_id", "recipient_id"]
+UI_ORDERED = ["Amount ($)", "Date Earned", "Payment Date", 
+              "Transaction Status", "Booking ID", "Recipient ID"]
+COL_MAPPER = {ORDERED[i]: UI_ORDERED[i] for i in range(len(ORDERED))}
+
 # Call the SideBarLinks from the nav module in the modules directory
 SideBarLinks()
 
@@ -21,6 +27,5 @@ st.text("")
 
 payments_df = requests.get("http://api:4000/a/payments").json()
 payments_df = pd.DataFrame(payments_df)
-ordered_cols = ["booking_id", "recipient_id", "method_id", "amount", "earned_date", "payment_date", "reviewed_by", "transaction_status"]
-payments_df = payments_df[ordered_cols]
+payments_df = payments_df[ORDERED].rename(columns=COL_MAPPER)
 st.dataframe(payments_df)

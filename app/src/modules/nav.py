@@ -33,18 +33,18 @@ def TutorPageNav():
 
 #### ------------------------ System Admin Role ------------------------
 def AdminPageNav():
-    st.sidebar.page_link("pages/11_admin_home.py", label="System Administrator Home", icon="🖥️")
-    st.sidebar.page_link("pages/12_system_logs.py", label="↳ System Logs")
-    st.sidebar.page_link("pages/13_backup_schedule.py", label="↳ Backup Schedule")
-    st.sidebar.page_link("pages/14_requests_review.py", label="↳ Advisor Requests")
-    st.sidebar.page_link("pages/15_edit_student_data.py", label="↳ Student Data")
+    st.sidebar.page_link("pages/12_admin_home.py", label="System Administrator Home", icon="🖥️")
+    st.sidebar.page_link("pages/13_system_logs.py", label="↳ System Logs")
+    st.sidebar.page_link("pages/14_backup_schedule.py", label="↳ Backup Schedule")
+    st.sidebar.page_link("pages/15_requests_review.py", label="↳ Advisor Requests")
+    st.sidebar.page_link("pages/16_edit_student_data.py", label="↳ Student Data")
 
 #### ------------------------ Academic Advisor Role ------------------------
 def AdvisorPageNav():
-    st.sidebar.page_link("pages/31_advisor_home.py", label="Academic Advisor Home", icon="👨‍🏫")
-    st.sidebar.page_link("pages/32_send_requests.py", label="↳ Send Requests")
-    st.sidebar.page_link("pages/33_view_payments.py", label="↳ View Payments")
-    st.sidebar.page_link("pages/34_user_active_min.py", label="↳ User Activity")
+    st.sidebar.page_link("pages/17_advisor_home.py", label="Academic Advisor Home", icon="👨‍🏫")
+    st.sidebar.page_link("pages/18_send_requests.py", label="↳ Send Requests")
+    st.sidebar.page_link("pages/19_view_payments.py", label="↳ View Payments")
+    st.sidebar.page_link("pages/20_user_active_min.py", label="↳ User Activity")
     st.sidebar.page_link("pages/35_booking_ratings.py", label="↳ Booking Ratings")
 
 # --------------------------------Links Function -----------------------------------------------
