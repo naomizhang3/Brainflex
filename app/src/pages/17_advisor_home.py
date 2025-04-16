@@ -2,18 +2,19 @@ import logging
 logger = logging.getLogger(__name__)
 import streamlit as st
 from modules.nav import SideBarLinks
-import requests
 
 st.set_page_config(layout = 'wide')
 
-# Show appropriate sidebar links for the role of the currently logged in user
+# add a sidebar
 SideBarLinks()
 
+# welcome the advisor
 st.title(f"Welcome Academic Advisor, {st.session_state['first_name']}.")
 st.write('')
 st.write('')
 st.write('### What would you like to do today?')
 
+# links to advisor pages
 if st.button("Send requests to admin", 
              type='primary',
              use_container_width=True):
@@ -32,4 +33,4 @@ if st.button("View active user time",
 if st.button("View booking ratings",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/35_booking_ratings.py')
+  st.switch_page('pages/21_booking_ratings.py')

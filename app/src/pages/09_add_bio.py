@@ -4,15 +4,11 @@ import streamlit as st
 from modules.nav import SideBarLinks
 import requests
 
-
-# for post/tutors add bio
-# Call the SideBarLinks from the nav module in the modules directory
+# add side bar
 SideBarLinks()
-
 
 # set the header of the page
 st.header("Update Your Bio")
-
 
 # add spacing for visual clarity
 st.text("")
@@ -20,6 +16,7 @@ st.text("")
 # adding new info to bio
 st.write("Add information for bio")
 
+# create a form to update the tutor's bio
 with st.form("add_tutor_bio"):
     user_id = st.session_state['user_id']
     bio = st.text_input('Bio:')

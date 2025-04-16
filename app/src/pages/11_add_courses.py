@@ -1,24 +1,19 @@
 import logging
 logger = logging.getLogger(__name__)
-import pandas as pd
 import streamlit as st
-from streamlit_extras.app_logo import add_logo
-import matplotlib.pyplot as plt
-import numpy as np
-import plotly.express as px
 from modules.nav import SideBarLinks
 import requests
-from datetime import datetime
 
-# Call the SideBarLinks from the nav module in the modules directory
+# add a side bar
 SideBarLinks()
 
-# Set the header of the page
+# set the header of the page
 st.header('Which course do you want to tutor for?')
 
-# Add spacing for visual clarity
+# add spacing for visual clarity
 st.text("")
 
+# create a form to register for a new tutorable course
 with st.form("register_courses"):
     course_id = st.text_input("Course Id")
     course_num = st.text_input("Course Number")

@@ -18,7 +18,13 @@ st.header("View Your Earnings")
 # add spacing for visual clarity
 st.text("")
 
+# retrieve the data and make it a df
 payments_df = requests.get("http://api:4000/t/transactions").json()
 payments_df = pd.DataFrame(payments_df)
+
+# rename the columns and re-index the df for a more intuitive user experience
 payments_df = payments_df[ORDERED].rename(columns=COL_MAPPER)
+payments_df.index = range(1, len(payments_df) + 1)
+
+# display the payments df
 st.dataframe(payments_df)

@@ -1,6 +1,5 @@
 import logging
 logger = logging.getLogger(__name__)
-
 import streamlit as st
 from modules.nav import SideBarLinks
 import requests
@@ -9,11 +8,13 @@ from datetime import datetime
 
 st.set_page_config(layout = 'wide')
 
-# Display the appropriate sidebar links for the role of the logged in user
+# add side bar
 SideBarLinks()
 
+# set a header
 st.header('Reschedule a Booking')
 
+# create a form to reschedule a booking
 with st.form("reschedulebooking"):
   user_id = st.session_state['user_id']
   booking_id = st.text_input("Booking Id")

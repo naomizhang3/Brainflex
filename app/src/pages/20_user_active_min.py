@@ -6,7 +6,7 @@ from modules.nav import SideBarLinks
 import requests
 
 API_LINK = "http://api:4000/a/useractivity"
-LABELS = {"value": "Active Minutes", "count": "Count"}
+LABELS = {"value": "Active Minutes"}
 
 # add side bar
 SideBarLinks()
@@ -26,6 +26,7 @@ tutor_active_min = [row["active_min"] for row in tutor_data]
 # format columns
 col1, col2 = st.columns(2)
 
+# create histograms to display the user activity data
 with col1:
     fig = px.histogram(student_active_min, nbins=10, labels=LABELS, 
                        title="Student Activity")

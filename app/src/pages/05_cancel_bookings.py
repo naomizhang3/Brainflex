@@ -3,7 +3,6 @@ logger = logging.getLogger(__name__)
 import streamlit as st
 from modules.nav import SideBarLinks
 import requests
-import pandas as pd
 
 # add side bar links
 SideBarLinks()
@@ -14,6 +13,7 @@ st.header("Cancel a Booking")
 # add spacing for visual clarity
 st.text("")
 
+# create a form to delete a booking
 with st.form("delete_booking_form"):
     booking_id = st.text_input('Booking ID: ')
     confirm = st.checkbox("I understand that this action cannot be undone.")

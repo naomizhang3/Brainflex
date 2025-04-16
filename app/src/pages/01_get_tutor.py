@@ -9,30 +9,24 @@ ORDERED = ["user_id", "first_name", "last_name", "bio"]
 UI_ORDERED = ["Tutor ID", "First Name", "Last Name", "Bio"]
 COL_MAPPER = {ORDERED[i]: UI_ORDERED[i] for i in range(len(ORDERED))}
 
-# Call the SideBarLinks from the nav module in the modules directory
+# add side bar
 SideBarLinks()
 
 # set the header of the page
 st.header('Tutor Search')
-
-# You can access the session state to make a more customized/personalized app experience
 st.write(f"### Hi, {st.session_state['first_name']}.")
 
-
+# create columns to get user input about the course
 col1, col2 = st.columns(2)
-
-# add one number input for variable 1 into column 1
 with col1:
   var_01 = st.text_input('Department ID:')
-
-# add another number input for variable 2 into column 2
 with col2:
   var_02 = st.text_input('Course Number:')
 
 logger.info(f'var_01 = {var_01}')
 logger.info(f'var_02 = {var_02}')
 
-
+# retrieve relevant data from the database
 if st.button('Find Tutors',
              type='primary',
              use_container_width=True):
