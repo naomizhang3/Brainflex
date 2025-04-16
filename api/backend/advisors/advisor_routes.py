@@ -103,11 +103,10 @@ def get_tutor_count():
     current_app.logger.info(query)
 
     try:
-        cursor = db.get_db().cursor()
         cursor.execute(query)
-        db.get_db().commit()
+        data = cursor.fetchall()
 
-        response = make_response("Successfully sent GET")
+        response = make_response(jsonify(data))
         response.status_code = 200
         return response
     except:
