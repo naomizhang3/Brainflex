@@ -90,7 +90,7 @@ def post_request():
     
 # 4.5 Check tutor supplies ---------------------------------------
 @advisor_routes.route("/tutorsupplies", methods = ["GET"])
-def post_request():
+def get_tutor_count():
     current_app.logger.info("GET /tutorsupplies")
 
     cursor = db.get_db().cursor()
