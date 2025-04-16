@@ -9,7 +9,7 @@ import pandas as pd
 SideBarLinks()
 
 # add the header
-st.header("Delete Booking")
+st.header("Cancel a Booking")
 
 # add spacing for visual clarity
 st.text("")

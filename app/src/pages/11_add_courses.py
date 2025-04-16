@@ -14,12 +14,11 @@ from datetime import datetime
 SideBarLinks()
 
 # Set the header of the page
-st.header('Register for courses')
+st.header('Which course do you want to tutor for?')
 
 # Add spacing for visual clarity
 st.text("")
 
-st.write("Register for courses")
 with st.form("register_courses"):
     course_id = st.text_input("Course Id")
     course_num = st.text_input("Course Number")
@@ -33,6 +32,6 @@ with st.form("register_courses"):
 
         response = requests.post(f"http://api:4000/t/register-couses/{st.session_state['user_id']}", json=data)
         if response.status_code == 200:
-            st.success(f"You are now able to tutor for {course_id} {course_num}")
+            st.success(f"You are now able to tutor for {course_id} {course_num}.")
         else:
-            st.error(f"Failed to add course")
+            st.error(f"Failed to add course.")

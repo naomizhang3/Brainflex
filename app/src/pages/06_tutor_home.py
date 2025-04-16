@@ -32,10 +32,10 @@ if st.button("Add bio",
 if st.button("View earnings",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/13_view_earnings.py')
+  st.switch_page('pages/10_view_earnings.py')
   
 
 if st.button("Add courses to tutor for",
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/14_add_courses.py')
+  st.switch_page('pages/11_add_courses.py')

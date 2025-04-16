@@ -14,7 +14,7 @@ SideBarLinks()
 add_logo("assets/logo.png", height=400)
 
 # set up the page
-st.header(f"View {st.session_state['first_name']}'s bookings")
+st.header(f"Hi, {st.session_state['first_name']}! View your bookings.")
 
 results = requests.get(f"http://api:4000/t/bookings/{st.session_state['user_id']}").json()
 ids = []

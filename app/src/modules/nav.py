@@ -28,8 +28,8 @@ def TutorPageNav():
     st.sidebar.page_link("pages/07_view_tutor_bookings.py", label="↳ All Booked Sessions")
     st.sidebar.page_link("pages/08_delete_tutor_bookings.py", label="↳ Cancel Bookings")
     st.sidebar.page_link("pages/09_add_bio.py", label="↳ Add Bio")
-    st.sidebar.page_link("pages/04_reschedule_booking.py", label="↳ Reschedule Bookings")
-    st.sidebar.page_link("pages/05_cancel_bookings.py", label="↳ Cancel Bookings")
+    st.sidebar.page_link("pages/10_view_earnings.py", label="↳ Earnings Dashboard")
+    st.sidebar.page_link("pages/11_add_courses.py", label="↳ Add Tutorable Courses")
 
 #### ------------------------ System Admin Role ------------------------
 def AdminPageNav():

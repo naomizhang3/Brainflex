@@ -12,7 +12,7 @@ SideBarLinks()
 
 
 # set the header of the page
-st.header("Add Bio")
+st.header("Update Your Bio")
 
 
 # add spacing for visual clarity
