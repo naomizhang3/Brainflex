@@ -87,3 +87,31 @@ def post_request():
         response = make_response("Failed to send request")
         response.status_code = 400
         return response
+    
+# 4.5 Check tutor supplies ---------------------------------------
+@advisor_routes.route("/tutorsupplies", methods = ["GET"])
+def post_request():
+    current_app.logger.info("GET /tutorsupplies")
+
+    cursor = db.get_db().cursor()
+    query = """
+    SELECT rc.course_id, rc.course_num, COUNT(*) AS `Number of Available Tutors`
+    FROM RegisteredCourses rc
+         JOIN Tutors t ON rc.user_id = t.user_id
+    GROUP BY rc.course_id, rc.course_num;
+    """
+    current_app.logger.info(query)
+
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query)
+        db.get_db().commit()
+
+        response = make_response("Successfully sent GET")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to send GET")
+        response.status_code = 400
+        return response
+    
