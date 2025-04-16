@@ -27,11 +27,11 @@ def post_bookings_data(user_id):
         cursor.execute(query_bookings, (int(user_id), course_id, course_num))
         db.get_db().commit()
 
-        response = make_response("Successfully added a tutorable class")
+        response = make_response("Successfully added a tutorable class.")
         response.status_code = 200
         return response
     except:
-        response = make_response("Failed to add a tutorable class")
+        response = make_response("Failed to add a tutorable class.")
         response.status_code = 400
         return response
     
@@ -58,11 +58,11 @@ def update_add_bio():
         db.get_db().commit()
 
 
-        response = make_response("Successfully added bio")
+        response = make_response("Successfully added bio.")
         response.status_code = 200
         return response
     except:
-        response = make_response("Failed to add bio")
+        response = make_response("Failed to add bio.")
         response.status_code = 400
         return response
    
@@ -121,4 +121,3 @@ def delete_tutor_bookings():
         response = make_response("Failed to delete booking.")
         response.status_code = 400
         return response
-
