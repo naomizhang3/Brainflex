@@ -1,5 +1,7 @@
 ![logo](app/src/assets/logo.png)
 
+<img src="docs/logo.png" width="100" height="100" />
+
 # BRAINFLEX
 BrainFlex is a data-driven tutoring app built specifically for university students to connect with tutors and offer tutoring themselves. Our mission is to make learning more personalized, intuitive, and enjoyable.
 
