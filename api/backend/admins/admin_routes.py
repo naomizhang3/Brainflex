@@ -1,12 +1,10 @@
-from flask import Blueprint, request, jsonify, make_response, current_app, redirect, url_for
-import json
+from flask import Blueprint, request, jsonify, make_response, current_app
 from backend.db_connection import db
-from backend.simple.playlist import sample_playlist_data
 
 admin_routes = Blueprint('admin_routes', __name__)
 
 # ------------------------------------------------------------
-# get relevant system logs data
+# 3.3 get relevant system logs data
 @admin_routes.route("/systemlogs", methods=['GET'])
 def get_system_logs():
     current_app.logger.info('GET /systemlogs route')
@@ -22,7 +20,7 @@ def get_system_logs():
     return response
 
 # ------------------------------------------------------------
-# get all backup schedule data
+# 3.5 get all backup schedule data
 @admin_routes.route("/backupschedule", methods=["GET"])
 def get_backup_schedule():
     current_app.logger.info('GET /backupschedule route')
@@ -37,7 +35,7 @@ def get_backup_schedule():
     return response
 
 # ------------------------------------------------------------
-# get all advisor requests data
+# 3.6 get all advisor requests data
 @admin_routes.route("/advrequests", methods=["GET"])
 def get_admin_requests():
     current_app.logger.info('GET /advrequests route')
@@ -66,7 +64,7 @@ def get_student_data():
     return response
 
 # ------------------------------------------------------------
-# post new inputted student data
+# 3.2 post new inputted student data
 @admin_routes.route("/studentdata", methods=["POST"])
 def post_student_data():
     data = request.json
@@ -96,7 +94,7 @@ def post_student_data():
         return response
     
 # ------------------------------------------------------------
-# delete student data at the inputted user ID
+# 3.1 delete student data at the inputted user ID
 @admin_routes.route("/studentdata", methods=["DELETE"])
 def delete_student_data():
     data = request.json

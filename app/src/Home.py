@@ -59,6 +59,7 @@ if st.button("Act as Alex, a student",
     logger.info("Logging in as student Alex")
     st.switch_page('pages/00_student_home.py')
 
+# create login buttons for other user personas
 if st.button('Act as Sasha, a tutor', 
             type = 'primary', 
             use_container_width=True):

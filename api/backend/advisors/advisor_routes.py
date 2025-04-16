@@ -1,8 +1,5 @@
-from flask import Blueprint, request, jsonify, make_response, current_app, redirect, url_for
-import json
+from flask import Blueprint, request, jsonify, make_response, current_app
 from backend.db_connection import db
-from backend.simple.playlist import sample_playlist_data
-#comment
 
 # This blueprint handles advisor routes
 advisor_routes = Blueprint('advisor_routes', __name__)

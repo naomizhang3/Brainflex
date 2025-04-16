@@ -9,7 +9,6 @@ import streamlit as st
 def HomeNav():
     st.sidebar.page_link("Home.py", label="Home", icon="🏠")
 
-
 def AboutPageNav():
     st.sidebar.page_link("pages/30_About.py", label="About", icon="🧠")
 
@@ -65,7 +64,7 @@ def SideBarLinks(show_home=False):
         # Show the Home page link (the landing page)
         HomeNav()
 
-    # Show the other page navigators depending on the users' role.
+    # Show the other page navigators depending on the users'role.
     if st.session_state["authenticated"]:
 
         if st.session_state["role"] == "student":

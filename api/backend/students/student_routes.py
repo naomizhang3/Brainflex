@@ -10,7 +10,7 @@ from backend.db_connection import db
 student_routes = Blueprint("student_routes", __name__)
 
 
-#-----1.1---------As a student, I need to be able to filter-search for tutors so that I can see tutors (and their bios) for the classes I’m enrolled in.
+#-----1.1 Get tutors data for specific courses---------
 
 
 @student_routes.route('/tutors/<course_id>/<course_num>', methods=['GET'])
@@ -28,7 +28,7 @@ def get_bookings(course_id, course_num):
     response.status_code = 200
     return response
 
-# ---------1.4---------------------------------------------------
+# ---------1.4 Get all bookings associated with the student---------------------
 @student_routes.route('/bookings/<userID>', methods=['GET'])
 def get_student_bookings(userID):
     current_app.logger.info('GET /bookings/<userID> route')
@@ -50,7 +50,7 @@ def get_student_bookings(userID):
     the_response.status_code = 200
     return the_response
 
-#1.2---------------------------------------------------------
+# 1.2 create a new booking-----------------------------------------------------
 @student_routes.route("/createbookings", methods=["POST"])
 def post_bookings_data():
 
@@ -94,10 +94,9 @@ def post_bookings_data():
         return response
 
 #------------------------------------------------------------
-# Update customer info for customer with particular userID
-#   Notice the manner of constructing the query.
+# 1.3 update booking data
 @student_routes.route('/bookings/<userID>/<booking_id>', methods=['PUT'])
-def update_bookings(userID, booking_id):
+def update_bookings(booking_id):
     data = request.json
     current_app.logger.info('PUT /bookings/<userID>/<booking_id> route')
     time = data['time']
@@ -119,7 +118,7 @@ def update_bookings(userID, booking_id):
         response.status_code = 400
         return response
     
-#--------------------------------------------------
+# 1.3 delete booking data--------------------------------------------------
 @student_routes.route('/cancel-bookings/<booking_id>', methods=["DELETE"])
 def delete_tutor_bookings(booking_id):
     current_app.logger.info("delete /cancel-bookings/<booking_id>")
