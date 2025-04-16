@@ -41,4 +41,18 @@ By matching students and tutors based on factors like **course needs**, **learni
    * localhost:4000/`route`/`name`
    
 # Contributors
-Biak Chin, Yueran Jia, Heidi Jiang, Tyler Wang, Naomi Zhang
+Biak Chin 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/biak-chin-2b3375284/)
+
+Yueran Jia
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-username/)
+
+Heidi Jiang
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-username/)
+
+Tyler Wang
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-username/)
+
+Naomi Zhang
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/naomi-zhang-37b796326/)
+
