@@ -13,12 +13,16 @@ st.header("Send Requests to Admin")
 # add spacing for visual clarity
 st.text("")
 
+rtypes_data = requests.get("http://api:4000/a/requesttypes").json()
+rtype_options = {row["request_name"]: row["type_id"] for row in rtypes_data}
+
 # sending requests to admin
 st.write("Send a New Request to Admin")
 with st.form("send_request_form"):
     description = st.text_input("Description: ")
     sent_by =  st.session_state['user_id']
-    type_id = st.text_input("Type ID: ")
+    input_rtype = st.selectbox("Select Request Type", list(rtype_options.keys()))
+    type_id = rtype_options[input_rtype]
 
     submitted = st.form_submit_button("Submit")
 

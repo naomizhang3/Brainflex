@@ -59,14 +59,18 @@ def get_bookings():
     response.status_code = 200
     return response
 
-# --------------------------------------------------------------
+# Get all request types -----------------------------------------
 @advisor_routes.route("/requesttypes", methods=["GET"])
 def get_request_types():
+    current_app.logger.info('GET /requesttypes route')
     cursor = db.get_db().cursor()
-    query = "SELECT type_id, request_name FROM RequestTypes"
+    query = """SELECT MIN(type_id) AS type_id, request_name FROM RequestTypes
+    GROUP BY request_name"""
     cursor.execute(query)
-    result = cursor.fetchall()
-    return jsonify(result)
+    data = cursor.fetchall()
+    response = make_response(jsonify(data))
+    response.status_code = 200
+    return response
 
 # 4.4 Send a request to the system admin-------------------------
 @advisor_routes.route("/requests", methods = ["POST"])
