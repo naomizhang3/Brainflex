@@ -18,7 +18,8 @@ def get_bookings(course_id, course_num):
     query = """SELECT t.user_id, t.first_name, t.last_name, t.bio
                FROM Tutors t
                JOIN RegisteredCourses rc ON t.user_id = rc.user_id
-               WHERE course_id = %s AND course_num = %s;"""
+               JOIN Courses c ON rc.course_id = c.course_id
+               WHERE c.dept_id = %s AND c.course_num = %s;"""
     cursor.execute(query, (course_id, course_num))
     data = cursor.fetchall()
 
@@ -56,7 +57,6 @@ def post_bookings_data():
     current_app.logger.info('POST /createbookings route')
     cursor = db.get_db().cursor()
 
-    booking_id = data["booking_id"]
     completion_status = data["completion_status"]
     creation_time = data["creation_time"]
     scheduled_time = data["scheduled_time"]
@@ -64,8 +64,8 @@ def post_bookings_data():
     tutor_id = data["tutor_id"]
     student_id = data["student_id"]
 
-    query_bookings = """INSERT INTO Bookings (booking_id, completion_status, creation_time, scheduled_time)
-    VALUES (%s, %s, %s, %s);"""
+    query_bookings = """INSERT INTO Bookings (completion_status, creation_time, scheduled_time)
+    VALUES (%s, %s, %s);"""
 
     query_bparticipants = """INSERT INTO BookingParticipants (tutor_id, student_id, booking_id)
     VALUES (%s, %s, %s);"""
@@ -75,17 +75,17 @@ def post_bookings_data():
 
     try:
         cursor = db.get_db().cursor()
-        cursor.execute(query_bookings, (booking_id, completion_status, creation_time, scheduled_time))
-        cursor = db.get_db().cursor()
+        cursor.execute(query_bookings, (completion_status, creation_time, scheduled_time))
 
+        booking_id = cursor.lastrowid
         cursor.execute(query_bparticipants, (int(tutor_id), int(student_id), int(booking_id)))
         db.get_db().commit()
 
-        response = make_response("Successfully scheduled a booking")
+        response = make_response("Successfully scheduled a booking.")
         response.status_code = 200
         return response
     except:
-        response = make_response("Failed to schedule a booking")
+        response = make_response("Failed to schedule a booking.")
         response.status_code = 400
         return response
 
@@ -105,11 +105,11 @@ def update_bookings(booking_id):
         cursor = db.get_db().cursor()
         r = cursor.execute(query, (time, booking_id))
         db.get_db().commit()
-        response = make_response("Successfully rescheduled a booking")
+        response = make_response("Successfully rescheduled a booking.")
         response.status_code = 200
         return response
     except:
-        response = make_response("Failed to reschedule a booking")
+        response = make_response("Failed to reschedule a booking.")
         response.status_code = 400
         return response
     

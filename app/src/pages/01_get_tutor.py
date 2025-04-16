@@ -32,5 +32,8 @@ if st.button('Find Tutors',
              use_container_width=True):
   results = requests.get(f'http://api:4000/s/tutors/{var_01}/{var_02}').json()
   results_df = pd.DataFrame(results)
-  tutors_df = results_df[[col for col in ORDERED]].rename(columns=COL_MAPPER)
-  st.dataframe(tutors_df)
+  try:
+    tutors_df = results_df[[col for col in ORDERED]].rename(columns=COL_MAPPER)
+    st.dataframe(tutors_df)
+  except:
+    st.error("No available tutors for this course :(")

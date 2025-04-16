@@ -19,16 +19,16 @@ st.header('Book a Tutoring Session')
 # add spacing for visual clarity
 st.text("")
 
-# retrieve relevant data
-student_id = st.session_state['user_id']
-booking_data = requests.get(f"http://api:4000/s/bookings/{student_id}").json()
-booking_data_df = pd.DataFrame(booking_data).rename(columns=COL_MAPPER)
-st.dataframe(booking_data_df)
+# retrieve data about already-booked sesions
+with st.expander("Booked Sessions"):
+    student_id = st.session_state['user_id']
+    booking_data = requests.get(f"http://api:4000/s/bookings/{student_id}").json()
+    booking_data_df = pd.DataFrame(booking_data).rename(columns=COL_MAPPER)
+    st.dataframe(booking_data_df)
 
 # create a form to add a new booking
-st.write("Schedule a Booking")
+st.write("Schedule a New Booking")
 with st.form("create_booking_form"):
-    booking_id = st.text_input("Booking Id")
     selected_date = st.date_input("Pick a date: ")
     selected_time = st.time_input("Pick a time: ")
     combined_datetime = datetime.combine(selected_date, selected_time)
@@ -38,7 +38,6 @@ with st.form("create_booking_form"):
 
     if submitted:
         data = {
-            "booking_id": booking_id,
             "completion_status": True,
             "creation_time": datetime.now().isoformat(),
             "scheduled_time": combined_datetime.isoformat(),
@@ -50,4 +49,4 @@ with st.form("create_booking_form"):
         if response.status_code == 200:
             st.success("Booking successfully created.")
         else:
-            st.error(f"Failed to schedule booking")
+            st.error(f"Failed to schedule booking.")
