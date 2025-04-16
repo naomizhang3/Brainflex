@@ -125,24 +125,26 @@ CREATE TABLE Flags
 DROP TABLE IF EXISTS Courses;
 CREATE TABLE Courses
 (
-    course_id  INT PRIMARY KEY AUTO_INCREMENT,
     dept_id    VARCHAR(25),
     course_num INT,
     section    INT,
-    professor  VARCHAR(50)
+    professor  VARCHAR(50),
+    PRIMARY KEY(dept_id, course_num)
 );
 
 DROP TABLE IF EXISTS RegisteredCourses;
 CREATE TABLE RegisteredCourses
 (
     user_id    INT,
-    course_id  INT,
-    PRIMARY KEY (user_id, course_id),
+    dept_id  VARCHAR(25),
+    course_num INT,
+
+    PRIMARY KEY (user_id, dept_id, course_num),
     CONSTRAINT registered_tutors_fk
         FOREIGN KEY (user_id)
             REFERENCES Tutors (user_id)
             ON DELETE CASCADE,
-    CONSTRAINT registered_courses_fk FOREIGN KEY (course_id) REFERENCES Courses (course_id)
+    CONSTRAINT registered_courses_fk FOREIGN KEY (dept_id, course_num) REFERENCES Courses (dept_id, course_num)
 );
 
 DROP TABLE IF EXISTS RequestTypes;

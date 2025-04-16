@@ -13,18 +13,20 @@ def post_bookings_data(user_id):
     current_app.logger.info('POST /register-couses/<user_id>')
     cursor = db.get_db().cursor()
 
-    course_id = data["course_id"]
+    course_id = data["dept_id"]
     course_num = data["course_num"]
     
     query_bookings = """INSERT INTO RegisteredCourses
-    (user_id, course_id, course_num)
+    (user_id, dept_id, course_num)
     VALUES (%s, %s, %s);
     """
+    
+    
     current_app.logger.info(query_bookings)
 
     try:
         cursor = db.get_db().cursor()
-        cursor.execute(query_bookings, (int(user_id), course_id, course_num))
+        cursor.execute(query_bookings, (int(user_id), course_id, int(course_num)))
         db.get_db().commit()
 
         response = make_response("Successfully added a tutorable class.")

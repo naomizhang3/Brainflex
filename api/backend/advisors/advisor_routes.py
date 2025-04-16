@@ -107,12 +107,11 @@ def get_tutor_count():
 
     cursor = db.get_db().cursor()
     query = """
-    SELECT c.dept_id, c.course_num, COUNT(*) AS `Number of Available Tutors`
+    SELECT rc.dept_id, rc.course_num, COUNT(*) AS `Number of Available Tutors`
     FROM RegisteredCourses rc
          JOIN Tutors t ON rc.user_id = t.user_id
-         JOIN Courses c ON rc.course_id = c.course_id
-    GROUP BY rc.course_id, c.dept_id, c.course_num
-    ORDER BY COUNT(*) DESC
+    GROUP BY rc.dept_id, rc.course_num
+    ORDER BY `Number of Available Tutors` DESC
     LIMIT 5;
     """
     current_app.logger.info(query)

@@ -799,277 +799,144 @@ VALUES ('NURS', 2414, 3, 'Drona Gershom'),
        ('PYS', 3609, 4, 'Conny Rabat'),
        ('NURS', 3287, 9, 'Kiele Fowden');
 
-# RegisteredCourses
-insert into RegisteredCourses (user_id, course_id)
-values (14, 38);
-insert into RegisteredCourses (user_id, course_id)
-values (29, 38);
-insert into RegisteredCourses (user_id, course_id)
-values (37, 38);
-insert into RegisteredCourses (user_id, course_id)
-values (40, 40);
-insert into RegisteredCourses (user_id, course_id)
-values (29, 20);
-insert into RegisteredCourses (user_id, course_id)
-values (32, 29);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 35);
-insert into RegisteredCourses (user_id, course_id)
-values (9, 15);
-insert into RegisteredCourses (user_id, course_id)
-values (16, 22);
-insert into RegisteredCourses (user_id, course_id)
-values (2, 24);
-insert into RegisteredCourses (user_id, course_id)
-values (39, 21);
-insert into RegisteredCourses (user_id, course_id)
-values (31, 2);
-insert into RegisteredCourses (user_id, course_id)
-values (30, 8);
-insert into RegisteredCourses (user_id, course_id)
-values (17, 37);
-insert into RegisteredCourses (user_id, course_id)
-values (6, 38);
-insert into RegisteredCourses (user_id, course_id)
-values (21, 10);
-insert into RegisteredCourses (user_id, course_id)
-values (2, 21);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 32);
-insert into RegisteredCourses (user_id, course_id)
-values (39, 8);
-insert into RegisteredCourses (user_id, course_id)
-values (38, 25);
-insert into RegisteredCourses (user_id, course_id)
-values (11, 40);
-insert into RegisteredCourses (user_id, course_id)
-values (31, 40);
-insert into RegisteredCourses (user_id, course_id)
-values (32, 34);
-insert into RegisteredCourses (user_id, course_id)
-values (34, 22);
-insert into RegisteredCourses (user_id, course_id)
-values (11, 32);
-insert into RegisteredCourses (user_id, course_id)
-values (21, 25);
-insert into RegisteredCourses (user_id, course_id)
-values (32, 37);
-insert into RegisteredCourses (user_id, course_id)
-values (27, 11);
-insert into RegisteredCourses (user_id, course_id)
-values (37, 31);
-insert into RegisteredCourses (user_id, course_id)
-values (7, 6);
-insert into RegisteredCourses (user_id, course_id)
-values (6, 8);
-insert into RegisteredCourses (user_id, course_id)
-values (17, 9);
-insert into RegisteredCourses (user_id, course_id)
-values (8, 2);
-insert into RegisteredCourses (user_id, course_id)
-values (21, 16);
-insert into RegisteredCourses (user_id, course_id)
-values (40, 24);
-insert into RegisteredCourses (user_id, course_id)
-values (39, 7);
-insert into RegisteredCourses (user_id, course_id)
-values (27, 39);
-insert into RegisteredCourses (user_id, course_id)
-values (31, 28);
-insert into RegisteredCourses (user_id, course_id)
-values (1, 2);
-insert into RegisteredCourses (user_id, course_id)
-values (10, 11);
-insert into RegisteredCourses (user_id, course_id)
-values (11, 22);
-insert into RegisteredCourses (user_id, course_id)
-values (22, 36);
-insert into RegisteredCourses (user_id, course_id)
-values (32, 1);
-insert into RegisteredCourses (user_id, course_id)
-values (36, 35);
-insert into RegisteredCourses (user_id, course_id)
-values (30, 4);
-insert into RegisteredCourses (user_id, course_id)
-values (6, 1);
-insert into RegisteredCourses (user_id, course_id)
-values (26, 29);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 15);
-insert into RegisteredCourses (user_id, course_id)
-values (39, 18);
-insert into RegisteredCourses (user_id, course_id)
-values (26, 31);
-insert into RegisteredCourses (user_id, course_id)
-values (11, 39);
-insert into RegisteredCourses (user_id, course_id)
-values (2, 31);
-insert into RegisteredCourses (user_id, course_id)
-values (24, 12);
-insert into RegisteredCourses (user_id, course_id)
-values (20, 21);
-insert into RegisteredCourses (user_id, course_id)
-values (39, 35);
-insert into RegisteredCourses (user_id, course_id)
-values (36, 29);
-insert into RegisteredCourses (user_id, course_id)
-values (19, 29);
-insert into RegisteredCourses (user_id, course_id)
-values (1, 38);
-insert into RegisteredCourses (user_id, course_id)
-values (3, 34);
-insert into RegisteredCourses (user_id, course_id)
-values (36, 10);
-insert into RegisteredCourses (user_id, course_id)
-values (16, 32);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 11);
-insert into RegisteredCourses (user_id, course_id)
-values (3, 37);
-insert into RegisteredCourses (user_id, course_id)
-values (13, 15);
-insert into RegisteredCourses (user_id, course_id)
-values (1, 24);
-insert into RegisteredCourses (user_id, course_id)
-values (18, 15);
-insert into RegisteredCourses (user_id, course_id)
-values (15, 6);
-insert into RegisteredCourses (user_id, course_id)
-values (18, 23);
-insert into RegisteredCourses (user_id, course_id)
-values (38, 35);
-insert into RegisteredCourses (user_id, course_id)
-values (9, 37);
-insert into RegisteredCourses (user_id, course_id)
-values (23, 13);
-insert into RegisteredCourses (user_id, course_id)
-values (16, 1);
-insert into RegisteredCourses (user_id, course_id)
-values (30, 21);
-insert into RegisteredCourses (user_id, course_id)
-values (18, 9);
-insert into RegisteredCourses (user_id, course_id)
-values (34, 31);
-insert into RegisteredCourses (user_id, course_id)
-values (38, 13);
-insert into RegisteredCourses (user_id, course_id)
-values (7, 5);
-insert into RegisteredCourses (user_id, course_id)
-values (20, 2);
-insert into RegisteredCourses (user_id, course_id)
-values (30, 36);
-insert into RegisteredCourses (user_id, course_id)
-values (17, 6);
-insert into RegisteredCourses (user_id, course_id)
-values (40, 26);
-insert into RegisteredCourses (user_id, course_id)
-values (24, 15);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 17);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 3);
-insert into RegisteredCourses (user_id, course_id)
-values (15, 25);
-insert into RegisteredCourses (user_id, course_id)
-values (22, 27);
-insert into RegisteredCourses (user_id, course_id)
-values (30, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (13, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (31, 37);
-insert into RegisteredCourses (user_id, course_id)
-values (16, 4);
-insert into RegisteredCourses (user_id, course_id)
-values (12, 9);
-insert into RegisteredCourses (user_id, course_id)
-values (25, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (22, 3);
-insert into RegisteredCourses (user_id, course_id)
-values (22, 23);
-insert into RegisteredCourses (user_id, course_id)
-values (10, 9);
-insert into RegisteredCourses (user_id, course_id)
-values (14, 26);
-insert into RegisteredCourses (user_id, course_id)
-values (3, 11);
-insert into RegisteredCourses (user_id, course_id)
-values (12, 21);
-insert into RegisteredCourses (user_id, course_id)
-values (29, 1);
-insert into RegisteredCourses (user_id, course_id)
-values (36, 33);
-insert into RegisteredCourses (user_id, course_id)
-values (38, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (34, 25);
-insert into RegisteredCourses (user_id, course_id)
-values (30, 2);
-insert into RegisteredCourses (user_id, course_id)
-values (22, 21);
-insert into RegisteredCourses (user_id, course_id)
-values (16, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (20, 23);
-insert into RegisteredCourses (user_id, course_id)
-values (39, 23);
-insert into RegisteredCourses (user_id, course_id)
-values (1, 30);
-insert into RegisteredCourses (user_id, course_id)
-values (33, 27);
-insert into RegisteredCourses (user_id, course_id)
-values (38, 9);
-insert into RegisteredCourses (user_id, course_id)
-values (28, 5);
-insert into RegisteredCourses (user_id, course_id)
-values (32, 12);
-insert into RegisteredCourses (user_id, course_id)
-values (13, 1);
-insert into RegisteredCourses (user_id, course_id)
-values (32, 33);
-insert into RegisteredCourses (user_id, course_id)
-values (10, 23);
-insert into RegisteredCourses (user_id, course_id)
-values (17, 19);
-insert into RegisteredCourses (user_id, course_id)
-values (17, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (33, 34);
-insert into RegisteredCourses (user_id, course_id)
-values (17, 34);
-insert into RegisteredCourses (user_id, course_id)
-values (12, 8);
-insert into RegisteredCourses (user_id, course_id)
-values (11, 6);
-insert into RegisteredCourses (user_id, course_id)
-values (7, 24);
-insert into RegisteredCourses (user_id, course_id)
-values (1, 16);
-insert into RegisteredCourses (user_id, course_id)
-values (12, 14);
-insert into RegisteredCourses (user_id, course_id)
-values (12, 15);
-insert into RegisteredCourses (user_id, course_id)
-values (23, 16);
-insert into RegisteredCourses (user_id, course_id)
-values (2, 23);
-insert into RegisteredCourses (user_id, course_id)
-values (15, 16);
-insert into RegisteredCourses (user_id, course_id)
-values (37, 6);
-insert into RegisteredCourses (user_id, course_id)
-values (19, 24);
-insert into RegisteredCourses (user_id, course_id)
-values (35, 20);
-insert into RegisteredCourses (user_id, course_id)
-values (38, 33);
-insert into RegisteredCourses (user_id, course_id)
-values (34, 13);
-insert into RegisteredCourses (user_id, course_id)
-values (18, 29);
-insert into RegisteredCourses (user_id, course_id)
-values (20, 33);
+INSERT INTO RegisteredCourses (user_id, dept_id, course_num) VALUES
+-- Original valid entries retained
+(14, 'BUS', 2583),
+(29, 'BUS', 2583),
+(37, 'BUS', 2583),
+(40, 'NURS', 3287),
+(29, 'BIO', 2625),
+(32, 'ECON', 3106),
+-- Invalid entries replaced with unique valid combinations
+(28, 'BIO', 3084),    -- Fixed duplicate
+(9, 'CS', 2715),
+(16, 'BIO', 3484),    -- Changed from BIO 3084 to BIO 3484
+(2, 'BUS', 3382),     -- Changed from BUS 2583 to BUS 3382
+(39, 'CS', 2715),
+(31, 'BIO', 3364),     -- Changed from BIO 2625 to BIO 3364
+(30, 'CS', 2715),
+(17, 'NURS', 3257),    -- Changed from NURS 3287 to NURS 3257
+(6, 'BUS', 1918),      -- Changed from BUS 2583 to BUS 1918
+(21, 'POL', 1704),     -- Changed from CS 2715 to POL 1704
+(2, 'ECON', 3106),     -- Changed from CS 2715 to ECON 3106
+(28, 'POL', 4266),    -- Changed from POL 1704 to POL 4266
+(39, 'ART', 3444),     -- Changed from COM 2109 to ART 3444
+(38, 'ENV', 3147),
+(11, 'NURS', 2414),    -- Changed from NURS 3287 to NURS 2414
+(31, 'BIO', 2091),     -- Changed from NURS 3287 to BIO 2091
+(32, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(34, 'BIO', 3364),     -- Changed from BIO 3084 to BIO 3364
+(11, 'POL', 4907),     -- Changed from POL 1704 to POL 4907
+(21, 'ENV', 3951),     -- Changed from ENV 3147 to ENV 3951
+(32, 'ACC', 3390),     -- Changed from ACC 2993 to ACC 3390
+(27, 'MECH', 3045),   -- Changed from CS 2715 to MECH 3045
+(37, 'ECON', 4159),    -- Changed from ECON 3106 to ECON 4159
+(7, 'COM', 4356),      -- Changed from COM 2109 to COM 4356
+(6, 'ART', 3444),      -- Changed from ART 2023 to ART 3444
+(17, 'PYS', 1228),     -- Changed from CS 2715 to PYS 1228
+(8, 'BIO', 3484),      -- Changed from BIO 2625 to BIO 3484
+(21, 'PHIL', 3052),    -- Changed from CS 2715 to PHIL 3052
+(40, 'PHYS', 1571),
+(39, 'COM', 4356),     -- Changed from COM 2109 to COM 4356
+(27, 'MATH', 3706),
+(31, 'ENG', 2474),
+(1, 'BIO', 3484),      -- Changed from BIO 2625 to BIO 3484
+(10, 'PYS', 2611),     -- Changed from CS 2715 to PYS 2611
+(11, 'BIO', 3364),     -- Changed from BIO 3084 to BIO 3364
+(22, 'BIO', 3959),     -- Changed from BIO 3084 to BIO 3959
+(32, 'ART', 3444),     -- Changed from ART 2023 to ART 3444
+(36, 'ART', 3444),
+(30, 'CIV', 2285),     -- Changed from CIV 1030 to CIV 2285
+(6, 'CIV', 1030),      -- Changed from ART 2023 to CIV 1030
+(26, 'ECON', 4159),    -- Changed from ECON 3106 to ECON 4159
+(28, 'SOC', 3200),     -- Changed from CS 2715 to SOC 3200
+(39, 'ENV', 3147),     -- Changed from CS 2715 to ENV 3147
+(26, 'ACC', 2993),     -- Changed from ECON 3106 to ACC 2993
+(11, 'PHYS', 1571),    -- Changed from MATH 3706 to PHYS 1571
+(2, 'POL', 1704),      -- Changed from ECON 3106 to POL 1704
+(24, 'MECH', 3045),    -- Changed from CS 2715 to MECH 3045
+(20, 'PHIL', 3052),    -- Changed from CS 2715 to PHIL 3052
+(39, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(36, 'ECON', 4159),    -- Changed from ECON 3106 to ECON 4159
+(19, 'POL', 4266),     -- Changed from ECON 3106 to POL 4266
+(1, 'BUS', 3358),      -- Changed from BUS 2583 to BUS 3358
+(3, 'SOC', 2462),      -- Changed from SOC 3200 to SOC 2462
+(36, 'PYS', 3609),     -- Changed from CS 2715 to PYS 3609
+(16, 'POL', 4907),     -- Changed from POL 1704 to POL 4907
+(28, 'ENV', 3951),     -- Changed from CS 2715 to ENV 3951
+(3, 'MATH', 3706),     -- Changed from CS 2715 to MATH 3706
+(13, 'ACC', 3390),     -- Changed from CS 2715 to ACC 3390
+(1, 'CS', 2715),       
+(18, 'PHYS', 1571),    -- Changed from CS 2715 to PHYS 1571
+(15, 'COM', 2109),
+(18, 'MECH', 3045),    -- Changed from CS 2715 to MECH 3045
+(38, 'ENV', 3951),     -- Changed from CS 2715 to ENV 3951
+(9, 'BIO', 2625),      -- Changed from CS 2715 to BIO 2625
+(23, 'PHIL', 3052),    -- Changed from CS 2715 to PHIL 3052
+(16, 'ART', 3444),     -- Changed from ART 2023 to ART 3444
+(29, 'SOC', 3200),     
+(18, 'PYS', 2611),     -- Changed from CS 2715 to PYS 2611
+(34, 'ECON', 4122),    -- Changed from ECON 3106 to ECON 4122
+(38, 'BIO', 2091),     -- Changed from CS 2715 to BIO 2091
+(7, 'COM', 2109),
+(20, 'BIO', 3364),     -- Changed from BIO 2625 to BIO 3364
+(29, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(17, 'COM', 4356),     -- Changed from COM 2109 to COM 4356
+(40, 'NURS', 3257),    -- Changed from PHYS 1571 to NURS 3257
+(24, 'ENV', 3147),     -- Changed from CS 2715 to ENV 3147
+(28, 'CIV', 2285),     -- Changed from CS 2715 to CIV 2285
+(28, 'BIO', 3959),     -- Changed from CHEM 1211 to BIO 3959
+(15, 'ENV', 3951),     -- Changed from ENV 3147 to ENV 3951
+(22, 'PHYS', 1571),
+(30, 'MATH', 3706),    -- Changed from CS 2715 to MATH 3706
+(13, 'POL', 1704),     -- Changed from CS 2715 to POL 1704
+(31, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(16, 'CIV', 2285),     -- Changed from CIV 1030 to CIV 2285
+(12, 'PYS', 1228),     -- Changed from CS 2715 to PYS 1228
+(25, 'ENV', 3147),     -- Changed from CS 2715 to ENV 3147
+(22, 'BIO', 3364),     -- Changed from CHEM 1211 to BIO 3364
+(22, 'ECON', 4122),    -- Changed from CS 2715 to ECON 4122
+(10, 'ENG', 2474),     -- Changed from CS 2715 to ENG 2474
+(14, 'CIV', 1030),     -- Changed from PHYS 1571 to CIV 1030
+(3, 'PHYS', 1571),     -- Changed from CS 2715 to PHYS 1571
+(12, 'ART', 3444),     -- Changed from CS 2715 to ART 3444
+(29, 'ART', 3444),     -- Changed from ART 2023 to ART 3444
+(36, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(38, 'ACC', 2993),     -- Changed from CS 2715 to ACC 2993
+(34, 'ENV', 3147),
+(30, 'BIO', 3484),     -- Changed from BIO 2625 to BIO 3484
+(22, 'MECH', 3045),    -- Changed from CS 2715 to MECH 3045
+(16, 'ECON', 3106),    -- Changed from CS 2715 to ECON 3106
+(20, 'ENV', 3951),     -- Changed from CS 2715 to ENV 3951
+(39, 'POL', 1704),     -- Changed from CS 2715 to POL 1704
+(1, 'ECON', 4159),     -- Changed from ECON 3106 to ECON 4159
+(33, 'PHYS', 1571),
+(38, 'SOC', 3200),     -- Changed from CS 2715 to SOC 3200
+(28, 'COM', 4356),     -- Changed from COM 2109 to COM 4356
+(32, 'MECH', 3045),    -- Changed from CS 2715 to MECH 3045
+(13, 'ART', 3444),     -- Changed from ART 2023 to ART 3444
+(30, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(13, 'BIO', 2625),     -- Changed from CS 2715 to BIO 2625
+(17, 'PYS', 3609),     -- Changed from CS 2715 to PYS 3609
+(17, 'ENG', 2474),     -- Changed from CS 2715 to ENG 2474
+(33, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(17, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(12, 'BIO', 3084),     -- Changed from CS 2715 to BIO 3084
+(11, 'COM', 4356),     -- Changed from COM 2109 to COM 4356
+(7, 'CS', 2715),
+(1, 'NURS', 3287),     -- Changed from CS 2715 to NURS 3287
+(12, 'PHIL', 3052),    -- Changed from CS 2715 to PHIL 3052
+(12, 'ENG', 2474),     -- Changed from CS 2715 to ENG 2474
+(23, 'ENV', 3147),     -- Changed from CS 2715 to ENV 3147
+(2, 'MATH', 3706),     -- Changed from CS 2715 to MATH 3706
+(15, 'PHYS', 1571),    -- Changed from CS 2715 to PHYS 1571
+(37, 'COM', 4356),     -- Changed from COM 2109 to COM 4356
+(19, 'BIO', 2625),     -- Changed from CS 2715 to BIO 2625
+(35, 'BIO', 3364),     -- Changed from BIO 2625 to BIO 3364
+(38, 'SOC', 2462),     -- Changed from SOC 3200 to SOC 2462
+(34, 'PYS', 2611),     -- Changed from CS 2715 to PYS 2611
+(18, 'ECON', 4159),    -- Changed from ECON 3106 to ECON 4159
+(20, 'SOC', 2462);     -- Changed from SOC 3200 to SOC 2462
 
 # RequestTypes
 INSERT INTO RequestTypes (request_name)
