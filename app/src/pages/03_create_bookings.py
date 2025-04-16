@@ -19,7 +19,7 @@ COL_MAPPER = {"booking_id": "Booking ID", "first_name": "First Name",
 SideBarLinks()
 
 # Set the header of the page
-st.header('Create Booking')
+st.header('Book a Tutoring Session')
 
 # Add spacing for visual clarity
 st.text("")

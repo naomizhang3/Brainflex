@@ -12,7 +12,7 @@ st.set_page_config(layout = 'wide')
 # Display the appropriate sidebar links for the role of the logged in user
 SideBarLinks()
 
-st.title('Reschedule a booking')
+st.header('Reschedule a Booking')
 
 with st.form("reschedulebooking"):
   user_id = st.session_state['user_id']
