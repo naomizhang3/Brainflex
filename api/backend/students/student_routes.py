@@ -11,8 +11,6 @@ student_routes = Blueprint("student_routes", __name__)
 
 
 #-----1.1 Get tutors data for specific courses---------
-
-
 @student_routes.route('/tutors/<course_id>/<course_num>', methods=['GET'])
 def get_bookings(course_id, course_num):
     current_app.logger.info('GET /tutors/<course_id>/<course_num> route')
@@ -72,8 +70,6 @@ def post_bookings_data():
     query_bparticipants = """INSERT INTO BookingParticipants (tutor_id, student_id, booking_id)
     VALUES (%s, %s, %s);"""
 
-
-
     current_app.logger.info(query_bookings)
     current_app.logger.info(query_bparticipants)
 
@@ -100,7 +96,6 @@ def update_bookings(booking_id):
     data = request.json
     current_app.logger.info('PUT /bookings/<userID>/<booking_id> route')
     time = data['time']
-
 
     query = """UPDATE Bookings
     SET scheduled_time = %s
