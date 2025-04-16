@@ -59,25 +59,33 @@ def get_bookings():
     response.status_code = 200
     return response
 
+# --------------------------------------------------------------
+@advisor_routes.route("/requesttypes", methods=["GET"])
+def get_request_types():
+    cursor = db.get_db().cursor()
+    query = "SELECT type_id, request_name FROM RequestTypes"
+    cursor.execute(query)
+    result = cursor.fetchall()
+    return jsonify(result)
+
 # 4.4 Send a request to the system admin-------------------------
 @advisor_routes.route("/requests", methods = ["POST"])
 def post_request():
     data = request.json
     current_app.logger.info(data)
     
-    request_id = data["request_id"]
     description = data["description"]
     sent_by = data["sent_by"]
     type_id = data["type_id"]
 
     cursor = db.get_db().cursor()
-    query = "INSERT INTO Requests (request_id, descr, sent_by, type_id, reviewed_by) " \
-    "VALUES (%s, %s, %s, %s, NULL)"
+    query = "INSERT INTO Requests (descr, sent_by, type_id, reviewed_by) " \
+    "VALUES (%s, %s, %s, NULL)"
     current_app.logger.info(query)
 
     try:
         cursor = db.get_db().cursor()
-        cursor.execute(query, (int(request_id), description, int(sent_by), int(type_id)))
+        cursor.execute(query, (description, int(sent_by), int(type_id)))
         db.get_db().commit()
 
         response = make_response("Successfully sent request")

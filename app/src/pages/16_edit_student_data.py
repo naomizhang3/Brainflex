@@ -35,7 +35,6 @@ col1, col2 = st.columns(2)
 with col1:
     st.write("Add New Student to System")
     with st.form("add_student_form"):
-        user_id = st.text_input('User ID:')
         nu_id = st.text_input('NUID:')
         first_name = st.text_input('First Name:')
         last_name = st.text_input('Last Name:')
@@ -44,7 +43,6 @@ with col1:
 
         if submitted:
             data = {
-                "user_id": user_id,
                 "nu_id": nu_id,
                 "fn": first_name,
                 "ln": last_name

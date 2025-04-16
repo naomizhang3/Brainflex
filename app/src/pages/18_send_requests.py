@@ -16,7 +16,6 @@ st.text("")
 # sending requests to admin
 st.write("Send a New Request to Admin")
 with st.form("send_request_form"):
-    request_id = st.text_input("Request ID: ")
     description = st.text_input("Description: ")
     sent_by =  st.session_state['user_id']
     type_id = st.text_input("Type ID: ")
@@ -25,7 +24,6 @@ with st.form("send_request_form"):
 
     if submitted:
         data = {
-            "request_id": request_id,
             "description": description,
             "sent_by": sent_by,
             "type_id": type_id
@@ -35,6 +33,6 @@ with st.form("send_request_form"):
         #st.write("Status code:", response.status_code)
         #st.write("Response body:", response.text)
         if response.status_code == 200:
-            st.success("Request successfully sent")
+            st.success("Request successfully sent.")
         else:
-            st.error("Failed to send request")
+            st.error("Failed to send request.")

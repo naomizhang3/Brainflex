@@ -1557,124 +1557,124 @@ VALUES ('Credit'),
 # Transactions
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (29, 8, 16, 37, 'valid', '2024-11-25 03:38:12', 23.72, '2024-09-27 15:11:16');
+values (29, 8, 16, 37, 'Valid', '2024-11-25 03:38:12', 23.72, '2024-09-27 15:11:16');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (6, 36, 32, 22, 'pending', '2024-08-03 11:44:22', 11.16, '2024-08-02 05:03:26');
+values (6, 36, 32, 22, 'Pending', '2024-08-03 11:44:22', 11.16, '2024-08-02 05:03:26');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (14, 25, 11, 6, 'pending', '2024-10-31 10:22:37', 69.1, '2024-07-10 19:32:48');
+values (14, 25, 11, 6, 'Pending', '2024-10-31 10:22:37', 69.1, '2024-07-10 19:32:48');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (23, 30, 28, 13, 'pending', '2024-05-03 09:30:14', 63.26, '2024-11-21 03:15:45');
+values (23, 30, 28, 13, 'Pending', '2024-05-03 09:30:14', 63.26, '2024-11-21 03:15:45');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (16, 19, 19, 19, 'invalid', '2025-03-16 15:16:51', 21.23, '2024-07-26 09:45:48');
+values (16, 19, 19, 19, 'Invalid', '2025-03-16 15:16:51', 21.23, '2024-07-26 09:45:48');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (10, 12, 4, 26, 'invalid', '2025-03-11 16:29:00', 29.5, '2024-05-22 15:10:51');
+values (10, 12, 4, 26, 'Invalid', '2025-03-11 16:29:00', 29.5, '2024-05-22 15:10:51');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (27, 27, 30, 7, 'pending', '2024-05-09 05:31:29', 9.64, '2024-09-16 11:35:43');
+values (27, 27, 30, 7, 'Pending', '2024-05-09 05:31:29', 9.64, '2024-09-16 11:35:43');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (22, 18, 37, 2, 'pending', '2025-04-02 02:59:04', 75.15, '2025-02-23 19:40:56');
+values (22, 18, 37, 2, 'Pending', '2025-04-02 02:59:04', 75.15, '2025-02-23 19:40:56');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (29, 19, 5, 31, 'pending', '2025-04-05 03:43:50', 44.86, '2024-05-29 12:11:48');
+values (29, 19, 5, 31, 'Pending', '2025-04-05 03:43:50', 44.86, '2024-05-29 12:11:48');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (14, 13, 18, 23, 'pending', '2024-11-12 02:43:28', 8.34, '2024-07-04 10:27:20');
+values (14, 13, 18, 23, 'Pending', '2024-11-12 02:43:28', 8.34, '2024-07-04 10:27:20');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (5, 26, 33, 6, 'pending', '2025-03-05 21:47:14', 2.78, '2024-08-01 09:17:23');
+values (5, 26, 33, 6, 'Pending', '2025-03-05 21:47:14', 2.78, '2024-08-01 09:17:23');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (17, 25, 17, 34, 'pending', '2024-12-23 07:16:54', 76.61, '2024-08-06 00:44:35');
+values (17, 25, 17, 34, 'Pending', '2024-12-23 07:16:54', 76.61, '2024-08-06 00:44:35');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (4, 12, 36, 38, 'valid', '2025-01-09 18:59:30', 67.51, '2025-03-12 06:01:39');
+values (4, 12, 36, 38, 'Valid', '2025-01-09 18:59:30', 67.51, '2025-03-12 06:01:39');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (31, 36, 40, 14, 'valid', '2024-05-31 12:04:48', 13.91, '2025-02-20 21:44:32');
+values (31, 36, 40, 14, 'Valid', '2024-05-31 12:04:48', 13.91, '2025-02-20 21:44:32');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (9, 8, 22, 35, 'invalid', '2024-10-18 00:42:36', 18.02, '2025-02-27 01:16:00');
+values (9, 8, 22, 35, 'Invalid', '2024-10-18 00:42:36', 18.02, '2025-02-27 01:16:00');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (26, 12, 8, 25, 'invalid', '2024-08-28 05:25:29', 83.14, '2024-04-21 11:14:48');
+values (26, 12, 8, 25, 'Invalid', '2024-08-28 05:25:29', 83.14, '2024-04-21 11:14:48');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (22, 13, 29, 1, 'valid', '2025-02-22 17:44:07', 62.3, '2024-12-19 03:04:25');
+values (22, 13, 29, 1, 'Valid', '2025-02-22 17:44:07', 62.3, '2024-12-19 03:04:25');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (18, 40, 17, 26, 'pending', '2025-02-10 08:10:32', 24.95, '2025-01-13 19:43:21');
+values (18, 40, 17, 26, 'Pending', '2025-02-10 08:10:32', 24.95, '2025-01-13 19:43:21');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (7, 24, 33, 23, 'pending', '2025-01-07 19:16:11', 37.07, '2024-08-22 07:01:54');
+values (7, 24, 33, 23, 'Pending', '2025-01-07 19:16:11', 37.07, '2024-08-22 07:01:54');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (10, 40, 38, 1, 'invalid', '2025-03-24 16:52:41', 69.51, '2024-08-24 19:55:26');
+values (10, 40, 38, 1, 'Invalid', '2025-03-24 16:52:41', 69.51, '2024-08-24 19:55:26');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (37, 28, 12, 14, 'valid', '2024-11-22 23:37:28', 85.25, '2025-03-12 19:29:10');
+values (37, 28, 12, 14, 'Valid', '2024-11-22 23:37:28', 85.25, '2025-03-12 19:29:10');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (3, 20, 24, 34, 'invalid', '2025-02-06 20:56:30', 65.06, '2024-11-25 23:01:51');
+values (3, 20, 24, 34, 'Invalid', '2025-02-06 20:56:30', 65.06, '2024-11-25 23:01:51');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (37, 23, 16, 29, 'valid', '2025-01-30 13:11:03', 62.3, '2025-02-13 13:53:16');
+values (37, 23, 16, 29, 'Valid', '2025-01-30 13:11:03', 62.3, '2025-02-13 13:53:16');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (27, 39, 39, 10, 'valid', '2025-02-23 09:38:59', 35.96, '2024-12-08 23:05:51');
+values (27, 39, 39, 10, 'Valid', '2025-02-23 09:38:59', 35.96, '2024-12-08 23:05:51');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (9, 21, 24, 32, 'pending', '2024-08-24 21:14:46', 37.44, '2024-06-07 04:07:07');
+values (9, 21, 24, 32, 'Pending', '2024-08-24 21:14:46', 37.44, '2024-06-07 04:07:07');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (4, 25, 4, 4, 'valid', '2024-07-22 14:19:03', 5.77, '2025-03-22 15:53:45');
+values (4, 25, 4, 4, 'Valid', '2024-07-22 14:19:03', 5.77, '2025-03-22 15:53:45');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (28, 10, 15, 15, 'invalid', '2024-05-03 15:26:56', 58.67, '2024-06-22 11:21:38');
+values (28, 10, 15, 15, 'Invalid', '2024-05-03 15:26:56', 58.67, '2024-06-22 11:21:38');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (4, 8, 38, 18, 'pending', '2024-12-23 08:57:24', 26.44, '2024-06-27 18:23:26');
+values (4, 8, 38, 18, 'Pending', '2024-12-23 08:57:24', 26.44, '2024-06-27 18:23:26');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (21, 30, 24, 37, 'valid', '2024-07-13 01:39:52', 73.48, '2025-02-04 20:29:28');
+values (21, 30, 24, 37, 'Valid', '2024-07-13 01:39:52', 73.48, '2025-02-04 20:29:28');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (19, 8, 6, 12, 'invalid', '2024-05-10 09:41:29', 39.17, '2024-07-28 07:34:32');
+values (19, 8, 6, 12, 'Invalid', '2024-05-10 09:41:29', 39.17, '2024-07-28 07:34:32');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (24, 16, 15, 34, 'pending', '2024-08-29 06:09:19', 60.63, '2024-12-15 16:29:47');
+values (24, 16, 15, 34, 'Pending', '2024-08-29 06:09:19', 60.63, '2024-12-15 16:29:47');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (17, 40, 25, 25, 'valid', '2024-12-25 19:15:11', 87.81, '2024-08-16 08:44:30');
+values (17, 40, 25, 25, 'Valid', '2024-12-25 19:15:11', 87.81, '2024-08-16 08:44:30');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (30, 29, 32, 35, 'pending', '2024-10-29 05:15:18', 63.46, '2024-10-05 17:00:17');
+values (30, 29, 32, 35, 'Pending', '2024-10-29 05:15:18', 63.46, '2024-10-05 17:00:17');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (1, 6, 35, 37, 'pending', '2024-07-23 15:29:45', 7.38, '2024-09-23 19:04:37');
+values (1, 6, 35, 37, 'Pending', '2024-07-23 15:29:45', 7.38, '2024-09-23 19:04:37');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (6, 8, 15, 10, 'pending', '2024-11-12 23:24:44', 24.52, '2024-09-30 23:39:52');
+values (6, 8, 15, 10, 'Pending', '2024-11-12 23:24:44', 24.52, '2024-09-30 23:39:52');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (39, 3, 10, 4, 'valid', '2024-12-19 01:00:23', 75.8, '2025-02-01 19:58:16');
+values (39, 3, 10, 4, 'Valid', '2024-12-19 01:00:23', 75.8, '2025-02-01 19:58:16');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (33, 3, 39, 13, 'valid', '2025-01-30 19:21:16', 66.64, '2024-08-03 03:22:51');
+values (33, 3, 39, 13, 'Valid', '2025-01-30 19:21:16', 66.64, '2024-08-03 03:22:51');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (19, 28, 40, 8, 'pending', '2024-04-25 11:26:15', 79.65, '2025-01-23 11:01:31');
+values (19, 28, 40, 8, 'Pending', '2024-04-25 11:26:15', 79.65, '2025-01-23 11:01:31');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (23, 18, 7, 15, 'valid', '2024-06-16 19:41:29', 65.07, '2024-05-20 04:04:00');
+values (23, 18, 7, 15, 'Valid', '2024-06-16 19:41:29', 65.07, '2024-05-20 04:04:00');
 insert into Transactions (recipient_id, reviewed_by, booking_id, method_id, transaction_status, payment_date, amount,
                           earned_date)
-values (10, 28, 25, 33, 'pending', '2024-12-06 08:10:40', 58.28, '2024-09-02 20:07:16');
+values (10, 28, 25, 33, 'Pending', '2024-12-06 08:10:40', 58.28, '2024-09-02 20:07:16');
 
 # Backups
 INSERT INTO Backups (backup_date, admin_id, backup_status)
