@@ -25,7 +25,7 @@ with st.form("add_tutor_bio"):
     user_id = st.session_state['user_id']
     bio = st.text_input('Bio:')
 
-    submitted = st.form_submit_button("Submit")
+    submitted = st.form_submit_button("Update")
 
     if submitted:
         data = {

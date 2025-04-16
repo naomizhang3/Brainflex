@@ -25,9 +25,9 @@ def StudentPageNav():
 #### ------------------------ Tutor Role ------------------------
 def TutorPageNav():
     st.sidebar.page_link("pages/06_tutor_home.py", label="Tutor Home", icon="🧑‍🏫")
-    st.sidebar.page_link("pages/13_view_tutor_bookings.py", label="↳ All Booked Sessions")
-    st.sidebar.page_link("pages/13_delete_bookings.py", label="↳ Cancel Bookings")
-    st.sidebar.page_link("pages/13_add_bio.py", label="↳ Add Bio")
+    st.sidebar.page_link("pages/07_view_tutor_bookings.py", label="↳ All Booked Sessions")
+    st.sidebar.page_link("pages/08_delete_tutor_bookings.py", label="↳ Cancel Bookings")
+    st.sidebar.page_link("pages/09_add_bio.py", label="↳ Add Bio")
     st.sidebar.page_link("pages/04_reschedule_booking.py", label="↳ Reschedule Bookings")
     st.sidebar.page_link("pages/05_cancel_bookings.py", label="↳ Cancel Bookings")
 
@@ -68,15 +68,15 @@ def SideBarLinks(show_home=False):
     # Show the other page navigators depending on the users' role.
     if st.session_state["authenticated"]:
 
-        # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
         if st.session_state["role"] == "student":
             StudentPageNav()
 
-        # If the user is an administrator, give them access to the administrator pages
+        if st.session_state["role"] == "tutor":
+            TutorPageNav()
+
         if st.session_state["role"] == "administrator":
             AdminPageNav()
         
-        # If the user is an administrator, give them access to the administrator pages
         if st.session_state["role"] == "advisor":
             AdvisorPageNav()
 

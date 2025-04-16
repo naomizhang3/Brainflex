@@ -36,6 +36,7 @@ def post_bookings_data(user_id):
         response = make_response("Failed to add a tutorable class")
         response.status_code = 400
         return response
+    
 # 2.2 --- PUT /tutors/{tutor_id} --------------------------------------
 @tutors_routes.route("add_bio", methods=["PUT"])
 def update_add_bio():
@@ -72,9 +73,10 @@ def update_add_bio():
 def get_bookings(tutor_id):
     current_app.logger.info('GET / bookings route')
     cursor = db.get_db().cursor()
-    query = """SELECT b.booking_id, b.scheduled_time FROM Bookings b
-        JOIN BookingParticipants bp ON b.booking_id = bp.booking_id
-        JOIN Tutors t ON bp.tutor_id = t.user_id WHERE t.user_id = %s;"""
+    query = """SELECT b.booking_id, b.scheduled_time, s.first_name, s.last_name 
+        FROM Bookings b JOIN BookingParticipants bp ON b.booking_id = 
+        bp.booking_id JOIN Tutors t ON bp.tutor_id = t.user_id JOIN Students s 
+        ON bp.student_id = s.user_id WHERE t.user_id = %s;"""
     cursor.execute(query, (tutor_id))
     data = cursor.fetchall()
 

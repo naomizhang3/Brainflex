@@ -13,7 +13,7 @@ SideBarLinks()
 add_logo("assets/logo.png", height=400)
 
 # set up the page
-st.header(f"Hi, {st.session_state['first_name']}! View your bookings!")
+st.header(f"Hi, {st.session_state['first_name']}! View your bookings.")
 
 # display formatted bookings
 results = requests.get(f'http://api:4000/s/bookings/{st.session_state["user_id"]}').json()

@@ -17,5 +17,17 @@ add_logo("assets/logo.png", height=400)
 st.header(f"View {st.session_state['first_name']}'s bookings")
 
 results = requests.get(f"http://api:4000/t/bookings/{st.session_state['user_id']}").json()
-st.dataframe(results)
+ids = []
+names = []
+times = []
+for row in results:
+    id = row["booking_id"]
+    name = f"{row['first_name']} {row['last_name']}"
+    time = row["scheduled_time"]
+    ids.append(id)
+    names.append(name)
+    times.append(time)
+bookings = pd.DataFrame({"Booking ID": ids, "Student": names, "Scheduled Time": times})
+bookings.index = range(1, len(bookings) + 1)
+st.dataframe(bookings)
 
