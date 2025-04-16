@@ -99,7 +99,9 @@ def get_tutor_count():
     FROM RegisteredCourses rc
          JOIN Tutors t ON rc.user_id = t.user_id
          JOIN Courses c ON rc.course_id = c.course_id
-    GROUP BY rc.course_id, c.dept_id, c.course_num;
+    GROUP BY rc.course_id, c.dept_id, c.course_num
+    ORDER BY COUNT(*) DESC
+    LIMIT 5;
     """
     current_app.logger.info(query)
 

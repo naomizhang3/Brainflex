@@ -35,7 +35,7 @@ if st.button("View booking ratings",
              use_container_width=True):
   st.switch_page('pages/21_booking_ratings.py')
   
-if st.button("See number of tutors per course",
+if st.button("View tutor availability per course",
              type='primary',
              use_container_width=True):
   st.switch_page('pages/22_tutor_supply.py')
