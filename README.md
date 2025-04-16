@@ -1,13 +1,14 @@
-![logo](http://app/assets/logo.png)
+![logo](assets/logo.png)
 
 # BRAINFLEX
 BrainFlex is a data-driven tutoring app built specifically for university students to connect with tutors and offer tutoring themselves. Our mission is to make learning more personalized, intuitive, and enjoyable.
 
 By matching students and tutors based on factors like **course needs**, **learning styles**, and **personality traits**, BrainFlex goes beyond traditional tutoring platforms to offer an engaging and effective educational experience.
 
+# BrainFlex is for...
 🎓 Students
 
-👩‍🏫 Tutors
+👩‍🏫 Tutor
 
 🛠️ System Administrators
 
