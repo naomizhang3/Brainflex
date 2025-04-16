@@ -14,7 +14,7 @@ import requests
 SideBarLinks()
 
 # set the header of the page
-st.header("View Booking Ratings")
+st.header("View Average Ratings")
 
 # add spacing for visual clarity
 st.text("")

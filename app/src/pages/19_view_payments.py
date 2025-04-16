@@ -20,7 +20,7 @@ COL_MAPPER = {ORDERED[i]: UI_ORDERED[i] for i in range(len(ORDERED))}
 SideBarLinks()
 
 # set the header of the page
-st.header("View outgoing payments")
+st.header("View Outgoing Payments")
 
 # add spacing for visual clarity
 st.text("")

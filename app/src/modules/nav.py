@@ -45,7 +45,7 @@ def AdvisorPageNav():
     st.sidebar.page_link("pages/18_send_requests.py", label="↳ Send Requests")
     st.sidebar.page_link("pages/19_view_payments.py", label="↳ View Payments")
     st.sidebar.page_link("pages/20_user_active_min.py", label="↳ User Activity")
-    st.sidebar.page_link("pages/35_booking_ratings.py", label="↳ Booking Ratings")
+    st.sidebar.page_link("pages/35_booking_ratings.py", label="↳ Average Ratings")
 
 # --------------------------------Links Function -----------------------------------------------
 def SideBarLinks(show_home=False):

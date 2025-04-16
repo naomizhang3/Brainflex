@@ -6,6 +6,11 @@ import requests
 import pandas as pd
 
 API_LINK = "http://api:4000/admin/studentdata"
+ORDERED = ["user_id", "nu_id", "first_name", "MI", "last_name", 
+                "acct_status"]
+UI_ORDERED = ["User ID", "NUID", "First Name", "MI", "Last Name", 
+                "Account Status"]
+COL_MAPPER = {ORDERED[i]: UI_ORDERED[i] for i in range(len(ORDERED))}
 
 # add side bar links
 SideBarLinks()
@@ -15,10 +20,8 @@ st.header("Student Data")
 
 # retrieve and display student data
 student_data = requests.get(API_LINK).json()
-ordered_cols = ["user_id", "nu_id", "first_name", "MI", "last_name", 
-                "acct_status"]
 student_df = pd.DataFrame(student_data)
-student_df = student_df[[col for col in ordered_cols]]
+student_df = student_df[[col for col in ORDERED]].rename(columns=COL_MAPPER)
 with st.expander("View All Student Data"):
     st.dataframe(student_df)
 
