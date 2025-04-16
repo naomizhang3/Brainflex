@@ -18,7 +18,7 @@ st.write("Send a New Request to Admin")
 with st.form("send_request_form"):
     request_id = st.text_input("Request ID: ")
     description = st.text_input("Description: ")
-    sent_by = st.text_input("Sent By: ")
+    sent_by =  st.session_state['user_id']
     type_id = st.text_input("Type ID: ")
 
     submitted = st.form_submit_button("Submit")
