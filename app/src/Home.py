@@ -86,5 +86,3 @@ if st.button('Act as Mr. Xander, an academic adviser',
     st.session_state['first_name'] = 'Mr. Xander'
     st.session_state['user_id'] = 1
     st.switch_page('pages/17_advisor_home.py')
-
-
