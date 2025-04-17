@@ -15,7 +15,7 @@ By matching students and tutors based on factors like **course needs**, **learni
 🎓 Academic Advisors
 
 # Video Demonstration
-[Click here](https://www.linkedin.com/in/naomi-zhang-37b796326/)
+[Click here](https://youtu.be/GF8A-ifDEGE)
 
 ## Tools We Use
 **Flask** – for building a robust REST API
@@ -30,7 +30,7 @@ By matching students and tutors based on factors like **course needs**, **learni
 ## Setting Up BRAINFLEX
 1. Clone the repository
 2. Configure your environment
-  Update the .env file with your unique password
+  Use the .env.template file to create a new .env file with your unique password
 
 3. Install Docker Desktop (if you haven't already)
 4. Start the app
