@@ -30,7 +30,7 @@ By matching students and tutors based on factors like **course needs**, **learni
 ## Setting Up BRAINFLEX
 1. Clone the repository
 2. Configure your environment
-  Use the .env.template file to create a new .env file with your unique password
+   * Use the .env.template file to create a new .env file with your unique password
 
 3. Install Docker Desktop (if you haven't already)
 4. Start the app
