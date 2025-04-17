@@ -92,7 +92,7 @@ def post_bookings_data():
 
 # -------------------1.3 update booking data----------------------
 @student_routes.route('/bookings/<userID>/<booking_id>', methods=['PUT'])
-def update_bookings(booking_id):
+def update_bookings(userID, booking_id):
     data = request.json
     current_app.logger.info('PUT /bookings/<userID>/<booking_id> route')
     time = data['time']
@@ -103,7 +103,7 @@ def update_bookings(booking_id):
     
     try:
         cursor = db.get_db().cursor()
-        r = cursor.execute(query, (time, booking_id))
+        r = cursor.execute(query, (time, int(booking_id)))
         db.get_db().commit()
         response = make_response("Successfully rescheduled a booking.")
         response.status_code = 200
