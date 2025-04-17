@@ -4,6 +4,33 @@ from backend.db_connection import db
 # This blueprint handles advisor routes
 advisor_routes = Blueprint('advisor_routes', __name__)
 
+# ------------------ 4.4 Send a request to the system admin ---------------------
+@advisor_routes.route("/requests", methods = ["POST"])
+def post_request():
+    data = request.json
+    current_app.logger.info(data)
+    
+    description = data["description"]
+    sent_by = data["sent_by"]
+    type_id = data["type_id"]
+
+    cursor = db.get_db().cursor()
+    query = "INSERT INTO Requests (descr, sent_by, type_id, reviewed_by) " \
+    "VALUES (%s, %s, %s, NULL)"
+    current_app.logger.info(query)
+
+    try:
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (description, int(sent_by), int(type_id)))
+        db.get_db().commit()
+
+        response = make_response("Successfully sent request")
+        response.status_code = 200
+        return response
+    except:
+        response = make_response("Failed to send request")
+        response.status_code = 400
+        return response
 #----------------- 4.6 Get all payments--------------------------
 @advisor_routes.route("/payments", methods=["GET"])
 def get_payments():
@@ -71,34 +98,6 @@ def get_request_types():
     response = make_response(jsonify(data))
     response.status_code = 200
     return response
-
-# ------------------ 4.4 Send a request to the system admin ---------------------
-@advisor_routes.route("/requests", methods = ["POST"])
-def post_request():
-    data = request.json
-    current_app.logger.info(data)
-    
-    description = data["description"]
-    sent_by = data["sent_by"]
-    type_id = data["type_id"]
-
-    cursor = db.get_db().cursor()
-    query = "INSERT INTO Requests (descr, sent_by, type_id, reviewed_by) " \
-    "VALUES (%s, %s, %s, NULL)"
-    current_app.logger.info(query)
-
-    try:
-        cursor = db.get_db().cursor()
-        cursor.execute(query, (description, int(sent_by), int(type_id)))
-        db.get_db().commit()
-
-        response = make_response("Successfully sent request")
-        response.status_code = 200
-        return response
-    except:
-        response = make_response("Failed to send request")
-        response.status_code = 400
-        return response
     
 # ---------------- 4.5 Check tutor supplies --------------------------
 @advisor_routes.route("/tutorsupplies", methods = ["GET"])
