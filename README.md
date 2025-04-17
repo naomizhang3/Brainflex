@@ -14,6 +14,9 @@ By matching students and tutors based on factors like **course needs**, **learni
 
 🎓 Academic Advisors
 
+# Video Demonstration
+[Click here](https://www.linkedin.com/in/naomi-zhang-37b796326/)
+
 ## Tools We Use
 **Flask** – for building a robust REST API
 
