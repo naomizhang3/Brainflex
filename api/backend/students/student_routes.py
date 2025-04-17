@@ -18,9 +18,9 @@ def get_bookings(course_id, course_num):
     query = """SELECT t.user_id, t.first_name, t.last_name, t.bio
                FROM Tutors t
                JOIN RegisteredCourses rc ON t.user_id = rc.user_id
-               JOIN Courses c ON rc.course_id = c.course_id
+               JOIN Courses c ON rc.dept_id = c.dept_id
                WHERE c.dept_id = %s AND c.course_num = %s;"""
-    cursor.execute(query, (course_id, course_num))
+    cursor.execute(query, (course_id, int(course_num)))
     data = cursor.fetchall()
 
     response = make_response(jsonify(data))
