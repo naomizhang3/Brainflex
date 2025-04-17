@@ -14,7 +14,7 @@ By matching students and tutors based on factors like **course needs**, **learni
 
 🎓 Academic Advisors
 
-# Video Demonstration
+## Video Demonstration
 [Click here](https://youtu.be/GF8A-ifDEGE)
 
 ## Tools We Use
